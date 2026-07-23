@@ -1,0 +1,26 @@
+2026-07-09T17:16:52Z - INFO - [process_data] --- Filtering Applied (2020-01-03 to 2020-01-18 & Semiconductors) ---
+2026-07-09T17:16:52Z - INFO - [process_data] Target Tickers: ['NVDA', 'AMD', 'INTC', 'QCOM', 'MU', 'TSM', 'TXN', 'AMAT', 'ADI', 'MRVL', 'ON']
+2026-07-09T17:16:52Z - INFO - [process_data] Rows Remaining: 177
+2026-07-09T17:16:52Z - INFO - [process_data] Using column for text content: 'summary'
+2026-07-09T17:16:52Z - INFO - [process_data] 
+--- Semiconductor Data Statistics ---
+2026-07-09T17:16:52Z - INFO - [process_data] TICKER     | MONTHS     | TOTAL ARTICLES
+2026-07-09T17:16:52Z - INFO - [process_data] ----------------------------------------
+2026-07-09T17:16:52Z - INFO - [process_data] AMD        | 1          | 52
+2026-07-09T17:16:52Z - INFO - [process_data] INTC       | 1          | 41
+2026-07-09T17:16:52Z - INFO - [process_data] MU         | 1          | 27
+2026-07-09T17:16:52Z - INFO - [process_data] QCOM       | 1          | 21
+2026-07-09T17:16:52Z - INFO - [process_data] TSM        | 1          | 14
+2026-07-09T17:16:52Z - INFO - [process_data] AMAT       | 1          | 8
+2026-07-09T17:16:52Z - INFO - [process_data] TXN        | 1          | 8
+2026-07-09T17:16:52Z - INFO - [process_data] MRVL       | 1          | 3
+2026-07-09T17:16:52Z - INFO - [process_data] ADI        | 1          | 2
+2026-07-09T17:16:52Z - INFO - [process_data] ON         | 1          | 1
+2026-07-09T17:16:52Z - INFO - [process_data] --- Final Cleanup ---
+2026-07-09T17:16:52Z - INFO - [process_data] Rows with valid text/title content: 177
+2026-07-09T17:16:52Z - INFO - [process_data] Loaded and filtered CSV successfully.
+2026-07-09T17:16:52Z - INFO - [TripletGenerator::execute_inference] Finished inference. Saving new csv to disk.
+2026-07-09T17:17:03Z - INFO - [claude_do_inference] Error executing inference for row 0: 'ThinkingBlock' object has no attribute 'text'
+2026-07-09T17:17:13Z - INFO - [claude_do_inference] Error executing inference for row 1: 'ThinkingBlock' object has no attribute 'text'
+2026-07-09T17:17:18Z - INFO - [claude_do_inference] Error executing inference for row 2: 'ThinkingBlock' object has no attribute 'text'
+2026-07-09T17:17:28Z - INFO - [claude_do_inference] Error executing inference for row 3: 'ThinkingBlock' object has no attribute 'text'

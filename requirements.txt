@@ -1,0 +1,17 @@
+torch
+torch-geometric
+pandas
+numpy
+networkx
+tqdm
+sentence-transformers
+pyvis
+summa
+thefuzz
+unionfind
+owlready2
+scipy
+scikit-learn
+
+boto3
+anthropic

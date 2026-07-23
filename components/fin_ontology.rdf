@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/finance#"
+     xml:base="http://example.org/finance"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Ontology rdf:about="http://example.org/finance"/>
+
+  <owl:Class rdf:about="#FINANCIALENTITY"/>
+  <owl:Class rdf:about="#COMPANY"/>
+  <owl:Class rdf:about="#DERIVATIVE"/>
+  <owl:Class rdf:about="#CURRENCY"/>
+  <owl:Class rdf:about="#BOND"/>
+  <owl:Class rdf:about="#PRODUCT"/>
+  <owl:Class rdf:about="#EVENT"/>
+  <owl:Class rdf:about="#SECTOR"/>
+  <owl:Class rdf:about="#ECONINDICATOR"/>
+  <owl:Class rdf:about="#FININSTRUMENTINFO"/>
+  <owl:Class rdf:about="#MACROINDICATOR"/>
+  <owl:Class rdf:about="#CONCEPT"/>
+
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#FINANCIALENTITY"/>
+      <rdf:Description rdf:about="#COMPANY"/>
+      <rdf:Description rdf:about="#DERIVATIVE"/>
+      <rdf:Description rdf:about="#CURRENCY"/>
+      <rdf:Description rdf:about="#BOND"/>
+      <rdf:Description rdf:about="#PRODUCT"/>
+      <rdf:Description rdf:about="#EVENT"/>
+      <rdf:Description rdf:about="#SECTOR"/>
+      <rdf:Description rdf:about="#ECONINDICATOR"/>
+      <rdf:Description rdf:about="#FININSTRUMENTINFO"/>
+      <rdf:Description rdf:about="#MACROINDICATOR"/>
+      <rdf:Description rdf:about="#CONCEPT"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+
+  <owl:ObjectProperty rdf:about="#has_sector">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#SECTOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#produces">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#offers">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#belongs_to">
+    <rdfs:domain rdf:resource="#PRODUCT"/>
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#SECTOR"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#impacts">
+    <rdfs:domain rdf:resource="#CONCEPT"/>
+    <rdfs:domain rdf:resource="#MACROINDICATOR"/>
+    <rdfs:domain rdf:resource="#EVENT"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#SECTOR"/>
+    <rdfs:range rdf:resource="#FINANCIALENTITY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#reports_on">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#announces">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#EVENT"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#expects">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#acquires">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#partnership_with">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_product_info">
+    <rdfs:domain rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#experiences">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#EVENT"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#faces_risk_of">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#maintains_rating">
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#raises_target">
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>v
+
+  <owl:ObjectProperty rdf:about="#located_in">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:domain rdf:resource="#EVENT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#provides">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#influences">
+    <rdfs:domain rdf:resource="#CONCEPT"/>
+    <rdfs:domain rdf:resource="#EVENT"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#is">
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#uses">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#produces_output">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#causes">
+    <rdfs:domain rdf:resource="#EVENT"/>
+    <rdfs:domain rdf:resource="#CONCEPT"/>
+    <rdfs:range rdf:resource="#EVENT"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#measures">
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#participates_in">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#EVENT"/>
+    <rdfs:range rdf:resource="#SECTOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_financial_metric">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#regulates">
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#SECTOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#owns">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#provides_financing_for">
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#reports_earnings">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#forecast">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_subsidiary">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#is_listed_on">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#FINANCIALENTITY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_credit_rating">
+    <rdfs:domain rdf:resource="#BOND"/>
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#trades_in">
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#DERIVATIVE"/>
+    <rdfs:range rdf:resource="#CURRENCY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#is_derivative_of">
+    <rdfs:domain rdf:resource="#DERIVATIVE"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#CURRENCY"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_maturity_date">
+    <rdfs:domain rdf:resource="#BOND"/>
+    <rdfs:domain rdf:resource="#DERIVATIVE"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_coupon_rate">
+    <rdfs:domain rdf:resource="#BOND"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_exchange_rate">
+    <rdfs:domain rdf:resource="#CURRENCY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#is_influenced_by">
+    <rdfs:domain rdf:resource="#ECONINDICATOR"/>
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#MACROINDICATOR"/>
+    <rdfs:range rdf:resource="#EVENT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_regulatory_status">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#affected_by_policy">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#SECTOR"/>
+    <rdfs:range rdf:resource="#EVENT"/>
+    <rdfs:range rdf:resource="#CONCEPT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_investment_in">
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#PRODUCT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#announces_dividend">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#FININSTRUMENTINFO"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#undergoes_restructuring">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#EVENT"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_market_cap">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_liquidity">
+    <rdfs:domain rdf:resource="#FININSTRUMENTINFO"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_volatility">
+    <rdfs:domain rdf:resource="#FININSTRUMENTINFO"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#experiences_inflation_impact">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#SECTOR"/>
+    <rdfs:range rdf:resource="#MACROINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#operates_in">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#follows_trend">
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_credit_risk">
+    <rdfs:domain rdf:resource="#BOND"/>
+    <rdfs:domain rdf:resource="#DERIVATIVE"/>
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#FINANCIALENTITY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_counterparty">
+    <rdfs:domain rdf:resource="#DERIVATIVE"/>
+    <rdfs:range rdf:resource="#FINANCIALENTITY"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#is_hedged_by">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:domain rdf:resource="#PRODUCT"/>
+    <rdfs:range rdf:resource="#DERIVATIVE"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_dividend_yield">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_earnings_per_share">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#has_cash_flow">
+    <rdfs:domain rdf:resource="#COMPANY"/>
+    <rdfs:range rdf:resource="#ECONINDICATOR"/>
+  </owl:ObjectProperty>
+
+</rdf:RDF>

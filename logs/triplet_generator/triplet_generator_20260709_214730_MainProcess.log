@@ -1,0 +1,28 @@
+2026-07-09T19:47:31Z - INFO - [process_data] --- Filtering Applied (2020-01-03 to 2020-01-18 & Semiconductors) ---
+2026-07-09T19:47:31Z - INFO - [process_data] Target Tickers: ['NVDA', 'AMD', 'INTC', 'QCOM', 'MU', 'TSM', 'TXN', 'AMAT', 'ADI', 'MRVL', 'ON']
+2026-07-09T19:47:31Z - INFO - [process_data] Rows Remaining: 177
+2026-07-09T19:47:31Z - INFO - [process_data] Using column for text content: 'summary'
+2026-07-09T19:47:31Z - INFO - [process_data] 
+--- Semiconductor Data Statistics ---
+2026-07-09T19:47:31Z - INFO - [process_data] TICKER     | MONTHS     | TOTAL ARTICLES
+2026-07-09T19:47:31Z - INFO - [process_data] ----------------------------------------
+2026-07-09T19:47:31Z - INFO - [process_data] AMD        | 1          | 52
+2026-07-09T19:47:31Z - INFO - [process_data] INTC       | 1          | 41
+2026-07-09T19:47:31Z - INFO - [process_data] MU         | 1          | 27
+2026-07-09T19:47:31Z - INFO - [process_data] QCOM       | 1          | 21
+2026-07-09T19:47:31Z - INFO - [process_data] TSM        | 1          | 14
+2026-07-09T19:47:31Z - INFO - [process_data] AMAT       | 1          | 8
+2026-07-09T19:47:31Z - INFO - [process_data] TXN        | 1          | 8
+2026-07-09T19:47:31Z - INFO - [process_data] MRVL       | 1          | 3
+2026-07-09T19:47:31Z - INFO - [process_data] ADI        | 1          | 2
+2026-07-09T19:47:31Z - INFO - [process_data] ON         | 1          | 1
+2026-07-09T19:47:31Z - INFO - [process_data] --- Final Cleanup ---
+2026-07-09T19:47:31Z - INFO - [process_data] Rows with valid text/title content: 177
+2026-07-09T19:47:31Z - INFO - [process_data] Loaded and filtered CSV successfully.
+2026-07-09T19:47:31Z - INFO - [TripletGenerator::execute_inference] Finished inference. Saving new csv to disk.
+2026-07-09T19:47:31Z - INFO - [_execute_inference_local] Starting local inference with model: qwen2.5:14b
+2026-07-09T19:47:31Z - INFO - [local_do_inference] Processing 129 articles with local model qwen2.5:14b.
+2026-07-09T19:47:31Z - INFO - [local_do_inference] Found 129 already processed articles in output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv. These will be skipped.
+2026-07-09T19:47:31Z - INFO - [_save_batch] Dropped 129 invalid/empty rows in this batch.
+2026-07-09T19:47:31Z - INFO - [local_do_inference] Finished processing all articles. All processed data is saved to CSV.
+2026-07-09T19:47:31Z - INFO - [TripletGenerator::execute_inference] Finished saving csv to disk at: output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv

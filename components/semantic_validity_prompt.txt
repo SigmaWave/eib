@@ -1,0 +1,34 @@
+You are a financial relationship evaluation assistant. Your task is to **independently assess the semantic validity of the extracted triplets**.
+
+You are provided with:
+- A financial news article
+- A list of extracted triplets, with each triplet structured as:
+  ('entity1', 'type1', 'relation', 'relation category type', 'entity2', 'type2')
+
+---
+
+### ARTICLE TEXT:
+{article_text_}
+
+---
+
+### EXTRACTED TRIPLETS:
+{triplets_}
+
+---
+
+### TASK:
+
+1. Assess **semantic validity**:
+  - Do the triplet relationships make logical and financial sense?
+  - Are the entity types coherent with the relationship type?
+  - Assign **LLM_Semantic_Validity_Score** from 0.0 (nonsensical) to 1.0 (valid)
+
+---
+
+### OUTPUT FORMAT (ONLY replace the content in the <> brackets. **DO NOT** ADJUST THE FORMAT OTHERWISE):
+
+{{
+  "LLM_Semantic_Validity_Score": <float between 0.0 and 1.0; Higher = More Semantically Valid>,
+  "Explanation": <Brief justification UNDER 125 WORDS explaining the reasoning behind your score, formatted as a python string>
+}}

@@ -1,0 +1,444 @@
+2026-07-09T15:48:53Z - INFO - [process_data] --- Filtering Applied (2020-01-03 to 2020-01-18 & Semiconductors) ---
+2026-07-09T15:48:53Z - INFO - [process_data] Target Tickers: ['NVDA', 'AMD', 'INTC', 'QCOM', 'MU', 'TSM', 'TXN', 'AMAT', 'ADI', 'MRVL', 'ON']
+2026-07-09T15:48:53Z - INFO - [process_data] Rows Remaining: 177
+2026-07-09T15:48:53Z - INFO - [process_data] Using column for text content: 'summary'
+2026-07-09T15:48:53Z - INFO - [process_data] 
+--- Semiconductor Data Statistics ---
+2026-07-09T15:48:53Z - INFO - [process_data] TICKER     | MONTHS     | TOTAL ARTICLES
+2026-07-09T15:48:53Z - INFO - [process_data] ----------------------------------------
+2026-07-09T15:48:53Z - INFO - [process_data] AMD        | 1          | 52
+2026-07-09T15:48:53Z - INFO - [process_data] INTC       | 1          | 41
+2026-07-09T15:48:53Z - INFO - [process_data] MU         | 1          | 27
+2026-07-09T15:48:53Z - INFO - [process_data] QCOM       | 1          | 21
+2026-07-09T15:48:53Z - INFO - [process_data] TSM        | 1          | 14
+2026-07-09T15:48:53Z - INFO - [process_data] AMAT       | 1          | 8
+2026-07-09T15:48:53Z - INFO - [process_data] TXN        | 1          | 8
+2026-07-09T15:48:53Z - INFO - [process_data] MRVL       | 1          | 3
+2026-07-09T15:48:53Z - INFO - [process_data] ADI        | 1          | 2
+2026-07-09T15:48:53Z - INFO - [process_data] ON         | 1          | 1
+2026-07-09T15:48:53Z - INFO - [process_data] --- Final Cleanup ---
+2026-07-09T15:48:53Z - INFO - [process_data] Rows with valid text/title content: 177
+2026-07-09T15:48:53Z - INFO - [process_data] Loaded and filtered CSV successfully.
+2026-07-09T15:48:53Z - INFO - [TripletGenerator::execute_inference] Finished inference. Saving new csv to disk.
+2026-07-09T15:48:53Z - INFO - [_execute_inference_local] Starting local inference with model: qwen2.5:14b
+2026-07-09T15:48:53Z - INFO - [local_do_inference] Processing 129 articles with local model qwen2.5:14b.
+2026-07-09T15:48:53Z - INFO - [local_do_inference] Found 30 already processed articles in output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv. These will be skipped.
+2026-07-09T15:48:53Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:49:02Z - INFO - [local_do_inference] output_triplets (idx 30):
+[('AMD', 'COMPANY', 'Competes With', 'SSI', 'Intel', 'COMPANY'), ('CEO Lisa Su', 'CONCEPT', 'Transforms', 'GFMK', 'AMD', 'COMPANY'), ('AMD', 'COMPANY', 'Experiences', 'SSI', 'Stock Price Growth', 'FININSTRUMENTINFO')]
+2026-07-09T15:49:02Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 8.862609500 seconds
+2026-07-09T15:49:02Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:49:19Z - INFO - [local_do_inference] output_triplets (idx 31):
+[('AMD', 'COMPANY', 'Unveils', 'SSI', 'Radeon RX 5600 GPU', 'PRODUCT'), ('Radeon RX 5600M GPU', 'PRODUCT', 'Ensures', 'SSI', 'WorldClass Gaming Experience', 'CONCEPT'), ('AMD', 'COMPANY', 'Unveils', 'SSI', 'Radeon RX 5700M GPUs', 'PRODUCT'), ('Radeon RX 5700M GPUs', 'PRODUCT', 'Power', 'SSI', 'HighPerformance Gaming Laptops', 'CONCEPT')]
+2026-07-09T15:49:19Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 16.710697000 seconds
+2026-07-09T15:49:19Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:49:28Z - INFO - [local_do_inference] output_triplets (idx 32):
+[('Micron Technology', 'COMPANY', 'Partners With', 'SSI', 'Hyundai', 'COMPANY'), ('Micron Technology', 'COMPANY', 'Experiences Price Increase', 'GMM', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T15:49:28Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 9.228460334 seconds
+2026-07-09T15:49:28Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:50:04Z - INFO - [local_do_inference] output_triplets (idx 33):
+[('Total Revenue', 'ECONINDICATOR', 'Decreases', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Total Revenue', 'ECONINDICATOR', 'Increases', 'SSI', 'Revenue', 'ECONINDICATOR'), ('TIs Products', 'PRODUCT', 'Negative Impact From', 'GMM', 'Cooling Demand', 'CONCEPT'), ('Trade War', 'CONCEPT', 'Negative Impact On', 'GMM', 'Revenue', 'ECONINDICATOR'), ('Trade War', 'CONCEPT', 'Negative Impact On', 'GMM', 'TIs Products', 'PRODUCT'), ('Communications Space', 'SECTOR', 'Positive Impact On', 'SSI', 'Demand', 'CONCEPT'), ('5G Networks', 'CONCEPT', 'Positive Impact On', 'SSI', 'Communications Space', 'SECTOR'), ('Revenue Growth', 'ECONINDICATOR', 'Positive Impact On', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Margins', 'ECONINDICATOR', 'Increases', 'SSI', 'Profitability', 'ECONINDICATOR'), ('Shares Outstanding', 'FININSTRUMENTINFO', 'Decreases', 'SSI', 'Supply', 'CONCEPT')]
+2026-07-09T15:50:04Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 36.006945166 seconds
+2026-07-09T15:50:04Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:50:13Z - INFO - [local_do_inference] output_triplets (idx 34):
+[('Qualcomm', 'COMPANY', 'Reports', 'SSI', 'Results', 'CONCEPT'), ('Qualcomm', 'COMPANY', 'Bounces Off Of', 'GMM', 'Uptrend Support', 'CONCEPT')]
+2026-07-09T15:50:13Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 9.348899833 seconds
+2026-07-09T15:50:13Z - INFO - [_save_batch] Dropped 30 invalid/empty rows in this batch.
+2026-07-09T15:50:13Z - INFO - [_save_batch] Processed up to index 34 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T15:50:13Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:50:49Z - INFO - [local_do_inference] output_triplets (idx 35):
+[('Revenue', 'ECONINDICATOR', 'Expected To Increase', 'SSI', '1221 billion', 'FININSTRUMENTINFO'), ('Turing Products', 'PRODUCT', 'Drives', 'SSI', 'Revenue Growth', 'ECONINDICATOR'), ('Data Center Demand', 'CONCEPT', 'Recovery Expected', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Tegra Processors Division', 'PRODUCT', 'Expected To Contribute', 'SSI', '142 billion', 'FININSTRUMENTINFO'), ('GPU Revenue', 'ECONINDICATOR', 'Expected To Decrease', 'SSI', '946 billion', 'FININSTRUMENTINFO'), ('PC and Notebook Sales', 'CONCEPT', 'Negative Impact On', 'SSI', 'GPU Revenue', 'ECONINDICATOR'), ('Data Center Demand', 'CONCEPT', 'Slows Down', 'SSI', 'GPU Revenue', 'ECONINDICATOR')]
+2026-07-09T15:50:49Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 35.458409875 seconds
+2026-07-09T15:50:49Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:51:20Z - INFO - [local_do_inference] output_triplets (idx 36):
+[('Advanced Micro Devices', 'COMPANY', 'Gains Market Share From', 'SSI', 'Intel Corporation', 'COMPANY'), ('Intel Corporation', 'COMPANY', 'Plans To Launch', 'SSI', 'Tiger Lake mobile chips', 'PRODUCT'), ('10nm', 'CONCEPT', 'Is Used In', 'SSI', 'Tiger Lake mobile chips', 'PRODUCT'), ('Xe graphics architecture', 'PRODUCT', 'Features In', 'SSI', 'Tiger Lake mobile chips', 'PRODUCT'), ('Intel Corporation', 'COMPANY', 'Works To Convince', 'SSI', 'Laptop OEMs', 'CONCEPT'), ('Intel Corporation', 'COMPANY', 'Works To Reverse', 'SSI', 'Consumer Perception Damage', 'CONCEPT')]
+2026-07-09T15:51:20Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 30.980356792 seconds
+2026-07-09T15:51:20Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:51:34Z - INFO - [local_do_inference] output_triplets (idx 37):
+[('Advanced Micro Devices', 'COMPANY', 'Experiences Price Increase', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Stock Price', 'FININSTRUMENTINFO', 'Surpasses', 'SSI', 'Average Estimate', 'CONCEPT')]
+2026-07-09T15:51:34Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 13.882478000 seconds
+2026-07-09T15:51:34Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:52:11Z - INFO - [local_do_inference] output_triplets (idx 38):
+[('Micron', 'COMPANY', 'Reports', 'SSI', 'Net Income Margin', 'ECONINDICATOR'), ('Net Income Margin', 'ECONINDICATOR', 'Increases To', 'GMM', '30', 'MACROINDICATOR'), ('Projected Growth', 'CONCEPT', 'Positive Impact On', 'GMM', 'Micron', 'COMPANY'), ('Micron', 'COMPANY', 'Experiences Price Increase', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Margins', 'ECONINDICATOR', 'Decreases', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Cost of Goods Sold', 'FININSTRUMENTINFO', 'Increases', 'GMM', 'Raw Material Costs', 'PRODUCT'), ('RD Expenses', 'FININSTRUMENTINFO', 'Increase As Percentage Of Revenue', 'GMM', '9', 'MACROINDICATOR')]
+2026-07-09T15:52:11Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 37.257026500 seconds
+2026-07-09T15:52:11Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:52:55Z - INFO - [local_do_inference] output_triplets (idx 39):
+[('AMD', 'COMPANY', 'Struggled To Compete Against', 'SSI', 'Intel', 'COMPANY'), ('AMD', 'COMPANY', 'Struggled To Compete Against', 'SSI', 'NVIDIA', 'COMPANY'), ('AMD', 'COMPANY', 'Invests Cash Flows From', 'SSI', 'APUs For PS4 And Xbox One', 'PRODUCT'), ('AMD', 'COMPANY', 'Develops CPUs That Match Performance Of', 'SSI', 'Intel', 'COMPANY'), ('AMD', 'COMPANY', 'Develops GPUs That Match Performance Of', 'SSI', 'NVIDIA', 'COMPANY'), ('AMD', 'COMPANY', 'Competes With Lower Price Points Than', 'SSI', 'Intel', 'COMPANY'), ('AMD', 'COMPANY', 'Competes With Lower Price Points Than', 'SSI', 'NVIDIA', 'COMPANY'), ('AMD', 'COMPANY', 'Remains Main Chipmaker For PS5 Of', 'SSI', 'Sony', 'COMPANY'), ('AMD', 'COMPANY', 'Remains Main Chipmaker For Xbox Series X Of', 'SSI', 'Microsoft', 'COMPANY')]
+2026-07-09T15:52:55Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 44.373008333 seconds
+2026-07-09T15:52:55Z - INFO - [_save_batch] Processed up to index 39 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T15:52:55Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:53:14Z - INFO - [local_do_inference] output_triplets (idx 40):
+[('iRobot', 'COMPANY', 'Partners With', 'SSI', 'IFTTT', 'COMPANY'), ('iRobot', 'COMPANY', 'Negative Impact On', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Trade War Concerns', 'CONCEPT', 'Negative Impact On', 'GMM', 'iRobot Stock', 'FININSTRUMENTINFO')]
+2026-07-09T15:53:14Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 19.236371916 seconds
+2026-07-09T15:53:14Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:53:33Z - INFO - [local_do_inference] output_triplets (idx 41):
+[('AMD', 'COMPANY', 'Gains Ground On', 'SSI', 'Intel Corporation', 'COMPANY'), ('AMD', 'COMPANY', 'Competes With', 'SSI', 'Intel Corporation', 'COMPANY'), ('Intel Corporation', 'COMPANY', 'Has Weaker Position Than', 'SSI', 'AMD', 'COMPANY'), ('Price War', 'CONCEPT', 'Negative Impact On', 'GMM', 'Profitability', 'ECONINDICATOR')]
+2026-07-09T15:53:33Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 18.285682083 seconds
+2026-07-09T15:53:33Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:53:51Z - INFO - [local_do_inference] output_triplets (idx 42):
+[('Intel', 'COMPANY', 'Competes With', 'SSI', 'AMD', 'COMPANY'), ('AMD', 'COMPANY', 'Outperforms', 'GMM', 'Tech Stocks', 'SECTOR'), ('Ryzen 7 4800U', 'PRODUCT', 'Surpasses', 'SSI', 'Core i7', 'PRODUCT')]
+2026-07-09T15:53:51Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 18.648379291 seconds
+2026-07-09T15:53:51Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:54:31Z - INFO - [local_do_inference] output_triplets (idx 43):
+[('Packaged Foods Sector', 'SECTOR', 'Has Average Forward Multiple Of', 'GFMK', '175 times', 'FININSTRUMENTINFO'), ('Beyond Meat', 'COMPANY', 'Equates Price Target To', 'SSI', 'Over 110', 'FININSTRUMENTINFO'), ('NIO', 'COMPANY', 'Implies Price Target Of', 'SSI', '9', 'FININSTRUMENTINFO'), ('Alcoholic Beverage Producers', 'SECTOR', 'Has Average Forward Multiple Of', 'GFMK', '20 times', 'FININSTRUMENTINFO'), ('CGC', 'STOCKTICKER', 'Equates Price Target To', 'SSI', '100', 'FININSTRUMENTINFO')]
+2026-07-09T15:54:31Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 39.646479916 seconds
+2026-07-09T15:54:31Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:55:03Z - INFO - [local_do_inference] output_triplets (idx 44):
+[('AMD', 'COMPANY', 'Forecasts Increase In', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Ryzen', 'PRODUCT', 'Drives Growth For', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Radeon', 'PRODUCT', 'Contributes To', 'SSI', 'Revenue', 'ECONINDICATOR'), ('AMD', 'COMPANY', 'Plans Expansion In', 'SSI', 'Data Center Business', 'SECTOR'), ('Advanced Micro Devices', 'COMPANY', 'Reports Increase In', 'SSI', 'Total Revenue', 'FININSTRUMENTINFO')]
+2026-07-09T15:55:03Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 31.899335459 seconds
+2026-07-09T15:55:03Z - INFO - [_save_batch] Processed up to index 44 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T15:55:03Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:55:16Z - INFO - [local_do_inference] output_triplets (idx 45):
+[('AMD', 'COMPANY', 'Gains Traction Against', 'SSI', 'Intel', 'COMPANY'), ('AMD', 'COMPANY', 'Beats To Market', 'SSI', '7nanometer chips', 'PRODUCT')]
+2026-07-09T15:55:16Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 13.538985375 seconds
+2026-07-09T15:55:16Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:55:49Z - INFO - [local_do_inference] output_triplets (idx 46):
+[('First Trust Technology AlphaDEX Fund', 'FININSTRUMENTINFO', 'Experiences Inflow Of', 'GMM', '4566 Million USD', 'CURRENCY'), ('Outstanding Units', 'FININSTRUMENTINFO', 'Increase By', 'GMM', '187 Percent', 'CONCEPT'), ('Skyworks Solutions Inc', 'COMPANY', 'Increases', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('ON Semiconductor Corp', 'COMPANY', 'Increases', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('DXC Technology Co', 'COMPANY', 'Increases', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T15:55:49Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 32.734091208 seconds
+2026-07-09T15:55:49Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:56:13Z - INFO - [local_do_inference] output_triplets (idx 47):
+[('Micron Technology', 'COMPANY', 'Experiences Gain In', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Cowen', 'FINANCIALENTITY', 'Upgrades', 'SSI', 'Micron Technology', 'COMPANY'), ('5Gcapable smartphones', 'CONCEPT', 'Drives Demand For', 'SSI', 'Memory Chips', 'PRODUCT'), ('Memory Chips', 'PRODUCT', 'Includes', 'GMM', 'DRAM', 'PRODUCT'), ('Memory Chips', 'PRODUCT', 'Includes', 'GMM', 'NAND Storage', 'PRODUCT')]
+2026-07-09T15:56:13Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 24.164501917 seconds
+2026-07-09T15:56:13Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:57:28Z - INFO - [local_do_inference] output_triplets (idx 48):
+[('IWB', 'FININSTRUMENTINFO', 'Includes', 'GFMK', 'Amgen Inc', 'COMPANY'), ('Amgen Inc', 'COMPANY', 'Symbol Is', 'GFMK', 'AMGN', 'STOCKTICKER'), ('IWB', 'FININSTRUMENTINFO', 'Includes', 'GFMK', 'Lilly', 'Eli'), ('IWB', 'FININSTRUMENTINFO', 'Includes', 'GFMK', 'Qualcomm Inc', 'COMPANY'), ('Qualcomm Inc', 'COMPANY', 'Symbol Is', 'GFMK', 'QCOM', 'STOCKTICKER'), ('Amgen Inc', 'COMPANY', 'Increases In Price', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Qualcomm Inc', 'COMPANY', 'Increases In Price', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('IWB', 'FININSTRUMENTINFO', 'Tracks', 'GFMK', '200 Day Moving Average', 'FININSTRUMENTINFO'), ('IWB', 'FININSTRUMENTINFO', 'Has 52 Week Low', 'GFMK', '14198 per share', 'MACROINDICATOR'), ('IWB', 'FININSTRUMENTINFO', 'Has 52 Week High', 'GFMK', '18098 per share', 'MACROINDICATOR')]
+2026-07-09T15:57:28Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 74.483801291 seconds
+2026-07-09T15:57:28Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:58:17Z - INFO - [local_do_inference] output_triplets (idx 49):
+[('Memory Developers', 'CONCEPT', 'Increase', 'SSI', 'Capacity', 'PRODUCT'), ('Capacity Increase', 'CONCEPT', 'Raises', 'GMM', 'Supply', 'CONCEPT'), ('Supply Raise', 'CONCEPT', 'Undercuts', 'GMM', 'Prices', 'FININSTRUMENTINFO'), ('Price Undercutting', 'CONCEPT', 'Negative Impact On', 'SSI', 'Micron', 'COMPANY'), ('Memory Chip Demand', 'CONCEPT', 'Rise', 'SSI', 'Future', 'MACROINDICATOR'), ('Demand Rise', 'CONCEPT', 'Reverses', 'GMM', 'Cyclical Downturns', 'ECONINDICATOR'), ('Cyclical Downturn Reversal', 'CONCEPT', 'Enables', 'SSI', 'PE Multiple Expansion', 'FININSTRUMENTINFO'), ('PE Multiple Expansion', 'FININSTRUMENTINFO', 'Prompts', 'GMM', 'Analysts', 'FINANCIALENTITY'), ('Analysts', 'FINANCIALENTITY', 'Increase', 'GMM', 'Earnings Estimates', 'CONCEPT')]
+2026-07-09T15:58:17Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 49.122523292 seconds
+2026-07-09T15:58:17Z - INFO - [_save_batch] Processed up to index 49 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T15:58:17Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:58:59Z - INFO - [local_do_inference] output_triplets (idx 50):
+[('Qualcomm', 'COMPANY', 'Partners With', 'SSI', 'CES', 'EVENT'), ('Snapdragon Ride platform', 'PRODUCT', 'Supports', 'SSI', 'Advanced Driver Assistance Systems', 'CONCEPT'), ('Tesla', 'COMPANY', 'Competes With', 'SSI', 'Qualcomm', 'COMPANY'), ('Nvidia', 'COMPANY', 'Competes With', 'SSI', 'Qualcomm', 'COMPANY'), ('Intel Mobileye', 'PRODUCT', 'Competes With', 'SSI', 'Snapdragon Ride platform', 'PRODUCT'), ('Autonomous Car Technology Market', 'CONCEPT', 'Opportunity For', 'SSI', 'Qualcomm', 'COMPANY'), ('QCOM stock', 'STOCKTICKER', 'Positive Impact On', 'SSI', 'Market Presence', 'CONCEPT')]
+2026-07-09T15:58:59Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 41.762219209 seconds
+2026-07-09T15:58:59Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:59:28Z - INFO - [local_do_inference] output_triplets (idx 51):
+[('Micron Technology', 'COMPANY', 'Increases', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Micron Technology', 'COMPANY', 'Acquires', 'SSI', 'IMFT joint venture from Intel', 'PRODUCT'), ('IMFT joint venture from Intel', 'PRODUCT', 'Positions', 'SSI', 'Micron Technology', 'COMPANY'), ('Micron Technology', 'COMPANY', 'Forecasts Upside Potential', 'SSI', '3D XPoint products in memory and storage applications', 'PRODUCT'), ('Stock Price', 'FININSTRUMENTINFO', 'Depends On', 'SSI', 'Company Performance', 'CONCEPT')]
+2026-07-09T15:59:28Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 28.796505958 seconds
+2026-07-09T15:59:28Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T15:59:55Z - INFO - [local_do_inference] output_triplets (idx 52):
+[('Marvell Technology Group Ltd', 'COMPANY', 'Lists New Options', 'GMM', 'February 28th Expiration', 'CONCEPT'), ('Investors', 'CONCEPT', 'Consider', 'SSI', 'Covered Call Contract', 'FININSTRUMENTINFO'), ('2650 Strike', 'DERIVATIVE', 'Represents', 'SSI', '1 Premium To Current Trading Price', 'CONCEPT'), ('2650 Strike', 'DERIVATIVE', 'OutoftheMoney By That Percentage', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T15:59:55Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 27.915168792 seconds
+2026-07-09T15:59:55Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:00:19Z - INFO - [local_do_inference] output_triplets (idx 53):
+[('Qualcomm', 'COMPANY', 'Pays', 'GFMK', 'Dividend', 'FININSTRUMENTINFO'), ('Dividend', 'FININSTRUMENTINFO', 'Has', 'GFMK', 'Dividend Yield', 'FININSTRUMENTINFO'), ('Dividend Yield', 'FININSTRUMENTINFO', 'Equals', 'GFMK', '275', 'CONCEPT'), ('Qualcomm', 'COMPANY', 'Consistently Increases', 'SSI', 'Dividend', 'FININSTRUMENTINFO')]
+2026-07-09T16:00:19Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 23.549812375 seconds
+2026-07-09T16:00:19Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:00:44Z - INFO - [local_do_inference] output_triplets (idx 54):
+[('RX 5600 XT', 'PRODUCT', 'Competes With', 'SSI', 'GTX 1660 Ti', 'PRODUCT'), ('NVIDIA', 'COMPANY', 'Launches', 'GMM', 'Ampere graphics cards', 'PRODUCT'), ('Ampere graphics cards', 'PRODUCT', 'Built On', 'SSI', '7nm Manufacturing Process', 'CONCEPT'), ('RX 5600 XT', 'PRODUCT', 'Claims To Outperform', 'SSI', 'GTX 1660 Ti', 'PRODUCT')]
+2026-07-09T16:00:44Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 24.556113166 seconds
+2026-07-09T16:00:44Z - INFO - [_save_batch] Processed up to index 54 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:00:44Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:01:08Z - INFO - [local_do_inference] output_triplets (idx 55):
+[('Analog Devices', 'COMPANY', 'Outperforms', 'SSI', 'Market', 'FININSTRUMENTINFO'), ('Analog Devices', 'COMPANY', 'Makes', 'SSI', 'Analog Chips', 'PRODUCT'), ('Analog Devices', 'COMPANY', 'Benefit From', 'SSI', '5G Technology', 'CONCEPT'), ('Shares', 'FININSTRUMENTINFO', 'Valued At', 'SSI', 'Analyst Target Earnings', 'ECONINDICATOR')]
+2026-07-09T16:01:08Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 24.220938166 seconds
+2026-07-09T16:01:08Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:01:24Z - INFO - [local_do_inference] output_triplets (idx 56):
+[('Traders', 'CONCEPT', 'Buy', 'SSI', '63 Strike Call Option', 'DERIVATIVE'), ('63 Strike Call Option', 'DERIVATIVE', 'Derives Value From', 'SSI', 'Applied Materials Inc', 'COMPANY')]
+2026-07-09T16:01:24Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 15.895572125 seconds
+2026-07-09T16:01:24Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:02:05Z - INFO - [local_do_inference] output_triplets (idx 57):
+[('DRAM', 'PRODUCT', 'Required By', 'SSI', '5G Devices', 'CONCEPT'), ('NAND Memory', 'PRODUCT', 'Required By', 'SSI', '5G Devices', 'CONCEPT'), ('MU Stock', 'STOCKTICKER', 'Traded At', 'GFMK', 'Price Point', 'FININSTRUMENTINFO'), ('Micron', 'COMPANY', 'Has Richer Product Stack Than', 'GMM', 'Competitor Company', 'COMPANY'), ('Micron', 'COMPANY', 'Delivering High FCF To', 'SSI', 'Investors', 'CONCEPT'), ('Memory Chip Industry', 'SECTOR', 'Shows Signs Of Improvement Post', 'GMM', 'Inventory Glut', 'CONCEPT'), ('MU Stock', 'STOCKTICKER', 'Could Test Price', 'SSI', 'Price Point', 'FININSTRUMENTINFO')]
+2026-07-09T16:02:05Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 41.110237500 seconds
+2026-07-09T16:02:05Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:02:13Z - INFO - [local_do_inference] output_triplets (idx 58):
+[('Advanced Micro Devices', 'COMPANY', 'Is Similar To', 'GFMK', 'Tesla', 'COMPANY')]
+2026-07-09T16:02:13Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 8.075802459 seconds
+2026-07-09T16:02:13Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:02:36Z - INFO - [local_do_inference] output_triplets (idx 59):
+[('Micron', 'COMPANY', 'Experiences', 'GMM', 'Price Action', 'FININSTRUMENTINFO'), ('MU Stock', 'STOCKTICKER', 'Positions For', 'SSI', 'Continued Upside', 'CONCEPT'), ('CES Event', 'EVENT', 'Drives', 'SSI', 'Bid', 'FININSTRUMENTINFO'), ('MU Stock', 'STOCKTICKER', 'Breaks Out From', 'GMM', 'Handle Consolidation', 'CONCEPT')]
+2026-07-09T16:02:36Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 23.482274291 seconds
+2026-07-09T16:02:36Z - INFO - [_save_batch] Processed up to index 59 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:02:36Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:02:54Z - INFO - [local_do_inference] output_triplets (idx 60):
+[('Micron Technology', 'COMPANY', 'Experiences Increase In', 'GMM', 'Stock Price', 'FININSTRUMENTINFO'), ('Memory Industry', 'CONCEPT', 'Turnaround Expected In', 'GMM', 'Industry Performance', 'CONCEPT'), ('December Operating Profit', 'ECONINDICATOR', 'Surpasses', 'SSI', 'Analyst Estimates', 'CONCEPT')]
+2026-07-09T16:02:54Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 17.615606958 seconds
+2026-07-09T16:02:54Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:03:28Z - INFO - [local_do_inference] output_triplets (idx 61):
+[('Advanced Micro Devices', 'COMPANY', 'Maintains Lead Over', 'SSI', 'Intel', 'COMPANY'), ('Advanced Micro Devices', 'COMPANY', 'Expands Presence In', 'SSI', 'Data Center Computing Market', 'SECTOR'), ('Advanced Micro Devices', 'COMPANY', 'Expands Presence In', 'SSI', 'HighEnd Gaming Machines Market', 'SECTOR'), ('Advanced Micro Devices', 'COMPANY', 'Launches', 'SSI', '7nanometer PC Processor and Graphics Chips', 'PRODUCT'), ('Market', 'CONCEPT', 'Positive Response To', 'SSI', '7nanometer PC Processor and Graphics Chips', 'PRODUCT'), ('Advanced Micro Devices', 'COMPANY', 'Experience Price Increase', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:03:28Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 34.285807041 seconds
+2026-07-09T16:03:28Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:03:56Z - INFO - [local_do_inference] output_triplets (idx 62):
+[('Taiwan Semiconductor Manufacturing Co Ltd', 'COMPANY', 'Reports', 'SSI', 'Net Revenues', 'ECONINDICATOR'), ('Net Revenues', 'ECONINDICATOR', 'Increases Year Over Year By', 'SSI', '15 Percent', 'CONCEPT'), ('Net Revenues', 'ECONINDICATOR', 'Decreases Month Over Month By', 'SSI', '42 Percent', 'CONCEPT'), ('Net Revenues', 'ECONINDICATOR', 'Grows Year Over Year By', 'SSI', '37 Percent', 'CONCEPT')]
+2026-07-09T16:03:56Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 28.153920333 seconds
+2026-07-09T16:03:56Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:04:31Z - INFO - [local_do_inference] output_triplets (idx 63):
+[('MKS Instruments', 'COMPANY', 'Experiences Increase In', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('MKS Instruments', 'COMPANY', 'Generates Revenue From', 'GMM', 'Semiconductor Market', 'SECTOR'), ('5G', 'CONCEPT', 'Drives Demand For', 'SSI', 'MKS Instruments', 'COMPANY'), ('AI', 'CONCEPT', 'Drives Demand For', 'SSI', 'MKS Instruments', 'COMPANY'), ('IoT', 'CONCEPT', 'Drives Demand For', 'SSI', 'MKS Instruments', 'COMPANY'), ('Automatic Driving', 'CONCEPT', 'Drives Demand For', 'SSI', 'MKS Instruments', 'COMPANY')]
+2026-07-09T16:04:31Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 34.093256250 seconds
+2026-07-09T16:04:31Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:05:05Z - INFO - [local_do_inference] output_triplets (idx 64):
+[('Advanced Micro Devices', 'COMPANY', 'Competes With', 'SSI', 'Intel', 'COMPANY'), ('Advanced Micro Devices', 'COMPANY', 'Gains Market Share From', 'SSI', 'Intel', 'COMPANY'), ('AMD', 'STOCKTICKER', 'Derives Value From', 'SSI', 'Advanced Micro Devices', 'COMPANY'), ('Intel', 'COMPANY', 'Experiences Delays In', 'SSI', '10 nm Manufacturing Process', 'PRODUCT'), ('Advanced Micro Devices', 'COMPANY', 'Launches', 'SSI', 'Ryzen 3000 CPUs', 'PRODUCT'), ('7 nmbased Ryzen 3000 CPUs', 'PRODUCT', 'Changes Market Dynamics For', 'SSI', 'Processor Market', 'SECTOR')]
+2026-07-09T16:05:05Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 34.750670292 seconds
+2026-07-09T16:05:05Z - INFO - [_save_batch] Processed up to index 64 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:05:05Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:05:35Z - INFO - [local_do_inference] output_triplets (idx 65):
+[('Advanced Micro Devices Inc', 'COMPANY', 'Trades', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('AMD', 'STOCKTICKER', 'Belongs To', 'GFMK', 'Advanced Micro Devices Inc', 'COMPANY'), ('4900 Strike Call Option', 'DERIVATIVE', 'Derives Value From', 'SSI', 'Advanced Micro Devices Inc', 'COMPANY'), ('4900 Strike Call Option', 'DERIVATIVE', 'Out Of The Money By', 'GFMK', '1', 'CONCEPT')]
+2026-07-09T16:05:35Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 29.861115792 seconds
+2026-07-09T16:05:35Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:06:09Z - INFO - [local_do_inference] output_triplets (idx 66):
+[('General Electric', 'COMPANY', 'Experiences Price Drop', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Advanced Micro Devices', 'COMPANY', 'Experiences Price Drop', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Invesco SP 500 BuyWrite ETF', 'FININSTRUMENTINFO', 'Sees Unusually High Volume', 'GMM', 'Trading Session', 'CONCEPT'), ('Abiomed', 'COMPANY', 'Outperforms', 'SSI', 'Other Components', 'CONCEPT'), ('HarleyDavidson', 'COMPANY', 'Underperforms', 'SSI', 'Other Components', 'CONCEPT')]
+2026-07-09T16:06:09Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 33.656612416 seconds
+2026-07-09T16:06:09Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:06:37Z - INFO - [local_do_inference] output_triplets (idx 67):
+[('NVIDIA', 'COMPANY', 'Competes With', 'SSI', 'Advanced Micro Devices', 'COMPANY'), ('Advanced Micro Devices', 'COMPANY', 'Has', 'GFMK', 'Forward PE Ratio', 'FININSTRUMENTINFO'), ('NVIDIA', 'COMPANY', 'Aggregates', 'GMM', 'Computing Power', 'CONCEPT'), ('HPC Market', 'SECTOR', 'Poised For', 'GMM', 'Dramatic Growth', 'CONCEPT'), ('NVIDIA', 'COMPANY', 'Meets Demand Of', 'SSI', 'HPC Market', 'SECTOR')]
+2026-07-09T16:06:37Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 28.635793292 seconds
+2026-07-09T16:06:37Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:07:27Z - INFO - [local_do_inference] output_triplets (idx 68):
+[('Ambarella', 'COMPANY', 'Expands Beyond', 'SSI', 'Image Processing SoCs', 'PRODUCT'), ('Ambarella', 'COMPANY', 'Competes With', 'SSI', 'Intel', 'COMPANY'), ('Intel', 'COMPANY', 'Main Rival Of', 'SSI', 'Ambarella', 'COMPANY'), ('Ambarella', 'COMPANY', 'Launches', 'SSI', 'Unified Software Infrastructure', 'PRODUCT'), ('Unified Software Infrastructure', 'PRODUCT', 'Targets', 'SSI', 'Automated Guided Vehicles', 'CONCEPT'), ('Unified Software Infrastructure', 'PRODUCT', 'Targets', 'SSI', 'Industrial Robots', 'CONCEPT'), ('Unified Software Infrastructure', 'PRODUCT', 'Targets', 'SSI', 'Smart Factory Applications', 'CONCEPT'), ('Unified Software Infrastructure', 'PRODUCT', 'Prioritizes For', 'SSI', 'Security Cameras', 'PRODUCT'), ('Hikvision', 'COMPANY', 'Added To', 'GMM', 'Trump Administrations Trade Blacklist', 'CONCEPT'), ('Dahua', 'COMPANY', 'Added To', 'GMM', 'Trump Administrations Trade Blacklist', 'CONCEPT')]
+2026-07-09T16:07:27Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 49.454561292 seconds
+2026-07-09T16:07:27Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:07:48Z - INFO - [local_do_inference] output_triplets (idx 69):
+[('Taiwan Semiconductor Manufacturing', 'COMPANY', 'Increases', 'SSI', 'Capital Expenditures', 'FININSTRUMENTINFO'), ('Interest Rates', 'MACROINDICATOR', 'Negative Impact On', 'GMM', 'Chip Sector', 'SECTOR'), ('Federal Reserve', 'FINANCIALENTITY', 'Decreases', 'GMM', 'Interest Rates', 'MACROINDICATOR')]
+2026-07-09T16:07:48Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 21.148764417 seconds
+2026-07-09T16:07:48Z - INFO - [_save_batch] Processed up to index 69 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:07:48Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:08:18Z - INFO - [local_do_inference] output_triplets (idx 70):
+[('Applied Materials', 'COMPANY', 'Experiences Increase In', 'GMM', 'Stock Price', 'FININSTRUMENTINFO'), ('Semiconductor Industry', 'SECTOR', 'Shows Signs Of', 'SSI', 'Rebound In Spending', 'CONCEPT'), ('Applied Materials', 'COMPANY', 'Benefits From', 'SSI', 'Renewed Demand For Products', 'CONCEPT'), ('Applied Materials', 'COMPANY', 'Invests In', 'GFMK', 'Unique Solutions', 'PRODUCT'), ('Unique Solutions', 'PRODUCT', 'Aids', 'GMM', 'Customers Success In AIBig Data Era', 'CONCEPT')]
+2026-07-09T16:08:18Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 29.787824209 seconds
+2026-07-09T16:08:18Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:08:48Z - INFO - [local_do_inference] output_triplets (idx 71):
+[('Instinet', 'FINANCIALENTITY', 'Reiterates Buy Rating On', 'GMM', 'Advanced Micro Devices', 'COMPANY'), ('Instinet', 'FINANCIALENTITY', 'Increases', 'GMM', 'Price Target', 'FININSTRUMENTINFO'), ('Advanced Micro Devices', 'COMPANY', 'Competes With', 'SSI', 'NVIDIA', 'COMPANY'), ('Advanced Micro Devices', 'COMPANY', 'Competes With', 'SSI', 'Intel', 'COMPANY'), ('Advanced Micro Devices', 'COMPANY', 'Anticipated To Capture More Than Its Fair Share', 'GMM', 'Market Expansion', 'CONCEPT')]
+2026-07-09T16:08:48Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 30.091574667 seconds
+2026-07-09T16:08:48Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:09:32Z - INFO - [local_do_inference] output_triplets (idx 72):
+[('Texas Instruments', 'COMPANY', 'Returns', 'GFMK', 'Free Cash Flow', 'ECONINDICATOR'), ('Free Cash Flow', 'ECONINDICATOR', 'Deployed As', 'GFMK', 'Stock Buybacks', 'FININSTRUMENTINFO'), ('Free Cash Flow', 'ECONINDICATOR', 'Deployed As', 'GFMK', 'Dividends', 'FININSTRUMENTINFO'), ('Tencent', 'COMPANY', 'Invests In', 'SSI', 'Gaming Ecosystem', 'PRODUCT'), ('Tencent', 'COMPANY', 'Invests In', 'SSI', 'Social Networking Ecosystem', 'PRODUCT'), ('Tencent', 'COMPANY', 'Invests In', 'SSI', 'Fintech Ecosystem', 'PRODUCT')]
+2026-07-09T16:09:32Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 44.166506417 seconds
+2026-07-09T16:09:32Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:10:17Z - INFO - [local_do_inference] output_triplets (idx 73):
+[('Qualcomm', 'COMPANY', 'Settles', 'SSI', 'Intellectual Property Dispute', 'CONCEPT'), ('Qualcomm', 'COMPANY', 'Receives', 'SSI', 'OneTime Payment', 'FININSTRUMENTINFO'), ('Apple', 'COMPANY', 'Pays', 'SSI', '5 Billion Dollars', 'CURRENCY'), ('Qualcomm', 'COMPANY', 'Enters', 'SSI', 'SixYear CrossLicensing Agreement', 'CONCEPT'), ('Qualcomm', 'COMPANY', 'Strangles Competition', 'GMM', 'CDMA Market', 'SECTOR'), ('Qualcomm', 'COMPANY', 'Strangles Competition', 'GMM', 'Premium LTE Modem Chip Market', 'SECTOR'), ('Qualcomm', 'COMPANY', 'Harms', 'GMM', 'Rivals', 'CONCEPT'), ('Qualcomm', 'COMPANY', 'Harms', 'GMM', 'OEMs', 'CONCEPT'), ('Qualcomm', 'COMPANY', 'Harms', 'GMM', 'End Consumers', 'CONCEPT')]
+2026-07-09T16:10:17Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 44.884323209 seconds
+2026-07-09T16:10:17Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:11:04Z - INFO - [local_do_inference] output_triplets (idx 74):
+[('Nvidia', 'COMPANY', 'Leads In', 'SSI', 'PC Gaming', 'CONCEPT'), ('Nvidia', 'COMPANY', 'Leads In', 'SSI', 'Autonomous Vehicles', 'CONCEPT'), ('Nvidia', 'COMPANY', 'Leads In', 'SSI', 'Artificial Intelligence', 'CONCEPT'), ('CES', 'EVENT', 'Features Products From', 'SSI', 'Startups Using AI', 'CONCEPT'), ('Nvidia', 'COMPANY', 'Has Strong Presence In', 'SSI', 'Data Center Business', 'PRODUCT'), ('Data Center Business', 'PRODUCT', 'Shows Strong Growth', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Autonomous Vehicles', 'PRODUCT', 'Shows Strong Growth', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Artificial Intelligence', 'PRODUCT', 'Set To Show Strong Growth', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Financial Analysts', 'FINANCIALENTITY', 'Are Positive About', 'GMM', 'Nvidia', 'COMPANY')]
+2026-07-09T16:11:04Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 46.588555375 seconds
+2026-07-09T16:11:04Z - INFO - [_save_batch] Processed up to index 74 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:11:04Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:11:11Z - INFO - [local_do_inference] output_triplets (idx 75):
+[('AMD', 'COMPANY', 'Experiences Price Increase', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:11:11Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 7.735162667 seconds
+2026-07-09T16:11:11Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:12:00Z - INFO - [local_do_inference] output_triplets (idx 76):
+[('Semiconductor Sector', 'SECTOR', 'Tracks', 'GMM', 'Broader Market', 'FININSTRUMENTINFO'), ('Management', 'CONCEPT', 'Comments On', 'SSI', 'RadioFrequency Chips', 'PRODUCT'), ('RadioFrequency Chips', 'PRODUCT', 'Positive Impact On', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('US', 'FINANCIALENTITY', 'Reaches Agreement With', 'GMM', 'China', 'FINANCIALENTITY'), ('Trade Deal', 'CONCEPT', 'Prevents', 'GMM', 'New Tariffs On Consumer Electronics', 'CONCEPT'), ('Qorvo', 'COMPANY', 'Guides For', 'SSI', 'Gross Margin', 'ECONINDICATOR'), ('Qorvo', 'COMPANY', 'Guides For', 'SSI', 'NonGAAP Earnings Per Share', 'ECONINDICATOR'), ('Board Authorization', 'CONCEPT', 'Approves', 'SSI', 'Share Repurchase Program', 'FININSTRUMENTINFO')]
+2026-07-09T16:12:00Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 48.441424667 seconds
+2026-07-09T16:12:00Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:12:30Z - INFO - [local_do_inference] output_triplets (idx 77):
+[('Mizuho', 'FINANCIALENTITY', 'Boosts', 'GMM', 'Price Target', 'FININSTRUMENTINFO'), ('AMD', 'COMPANY', 'Announces', 'SSI', 'Third Generation Mobile Processors', 'PRODUCT'), ('Third Generation Mobile Processors', 'PRODUCT', 'Positive Impact On', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:12:30Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 30.546546125 seconds
+2026-07-09T16:12:30Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:13:24Z - INFO - [local_do_inference] output_triplets (idx 78):
+[]
+2026-07-09T16:13:24Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 54.150247292 seconds
+2026-07-09T16:13:24Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:14:06Z - INFO - [local_do_inference] output_triplets (idx 79):
+[('Taiwan Semi', 'COMPANY', 'Manufactures For', 'SSI', 'Advanced Micro Devices', 'COMPANY'), ('Taiwan Semi', 'COMPANY', 'Manufactures For', 'SSI', 'Qualcomm', 'COMPANY'), ('Susquehanna', 'FINANCIALENTITY', 'Cites', 'GMM', 'Taiwan Semi', 'COMPANY'), ('Taiwan Semi', 'COMPANY', 'Supports', 'SSI', 'AMD Story', 'CONCEPT'), ('Taiwan Semi', 'COMPANY', 'Invests In', 'SSI', 'Manufacturing Systems Upgrades', 'PRODUCT'), ('7nanometer Process', 'PRODUCT', 'Uses By', 'GMM', 'Advanced Micro Devices', 'COMPANY'), ('5nanometer Process', 'PRODUCT', 'Next Generation Of', 'GMM', '7nanometer Process', 'PRODUCT')]
+2026-07-09T16:14:06Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 41.213334292 seconds
+2026-07-09T16:14:06Z - INFO - [_save_batch] Processed up to index 79 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:14:06Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:14:29Z - INFO - [local_do_inference] output_triplets (idx 80):
+[('AMD', 'COMPANY', 'Competes With', 'SSI', 'Intel', 'COMPANY'), ('AMD', 'COMPANY', 'Competes With', 'SSI', 'Nvidia', 'COMPANY'), ('CES 2020', 'EVENT', 'Includes', 'GFMK', 'Intel', 'NASDAQ'), ('CES 2020', 'EVENT', 'Includes', 'GFMK', 'AMD', 'NASDAQ')]
+2026-07-09T16:14:29Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 23.133290292 seconds
+2026-07-09T16:14:29Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:15:08Z - INFO - [local_do_inference] output_triplets (idx 81):
+[('TSMC', 'COMPANY', 'Supplies To', 'SSI', 'Apple', 'COMPANY'), ('TSMC', 'COMPANY', 'Supplies To', 'SSI', 'Huawei', 'COMPANY'), ('TSMC', 'COMPANY', 'Leads In', 'SSI', 'Semiconductors', 'PRODUCT'), ('TSMC', 'COMPANY', 'Has Edge Over', 'SSI', 'Samsung Electronics', 'COMPANY'), ('TSMC', 'COMPANY', 'Has Edge Over', 'SSI', 'Intel', 'COMPANY'), ('Consumers', 'CONCEPT', 'Wary Of', 'GMM', 'Pricing Power', 'CONCEPT'), ('TSMC', 'COMPANY', 'Risks', 'SSI', 'Consumer Aversion To High Prices', 'CONCEPT')]
+2026-07-09T16:15:08Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 38.950002084 seconds
+2026-07-09T16:15:08Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:15:34Z - INFO - [local_do_inference] output_triplets (idx 82):
+[('QCOM', 'STOCKTICKER', 'Reaches Higher Pivot Highs And Lows', 'SSI', 'Market Trend', 'CONCEPT'), ('QCOM', 'STOCKTICKER', 'Increases Following', 'SSI', 'Earnings Report', 'EVENT'), ('QCOM', 'STOCKTICKER', 'Closes At', 'GFMK', '9411', 'FININSTRUMENTINFO'), ('Tech Sector', 'SECTOR', 'Outperforms', 'GMM', 'Other Sectors', 'CONCEPT')]
+2026-07-09T16:15:34Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 26.011919333 seconds
+2026-07-09T16:15:34Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:16:02Z - INFO - [local_do_inference] output_triplets (idx 83):
+[('Legal Environment', 'CONCEPT', 'Improves', 'SSI', 'Company', 'COMPANY'), ('Company', 'COMPANY', 'Increases', 'SSI', 'Multiples', 'FININSTRUMENTINFO'), ('Qualcomm', 'COMPANY', 'Attempts To Win', 'SSI', 'Control Over 5G World', 'CONCEPT'), ('Qualcomm', 'COMPANY', 'Uses', 'SSI', 'Contracts', 'PRODUCT'), ('Contracts', 'PRODUCT', 'Tie', 'SSI', 'Patents', 'CONCEPT'), ('Contracts', 'PRODUCT', 'To', 'SSI', 'Chip Sales', 'PRODUCT')]
+2026-07-09T16:16:02Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 27.797740791 seconds
+2026-07-09T16:16:02Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:16:33Z - INFO - [local_do_inference] output_triplets (idx 84):
+[('NVDA', 'COMPANY', 'Increases In Value', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('INTC', 'COMPANY', 'Increases In Value', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('AMD', 'COMPANY', 'Increases In Value', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Equity Markets', 'CONCEPT', 'Maintains High Levels', 'GMM', 'AllTime Highs', 'CONCEPT'), ('Trump Administration', 'FINANCIALENTITY', 'Signing', 'SSI', 'Phase One Deal', 'CONCEPT'), ('Phase One Deal', 'CONCEPT', 'Involves', 'GMM', 'China', 'COMPANY')]
+2026-07-09T16:16:33Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 31.480222041 seconds
+2026-07-09T16:16:33Z - INFO - [_save_batch] Processed up to index 84 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:16:33Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:16:54Z - INFO - [local_do_inference] output_triplets (idx 85):
+[('RingCentral Inc', 'COMPANY', 'Increases', 'GMM', 'Stock Price', 'FININSTRUMENTINFO'), ('Paycom Software Inc', 'COMPANY', 'Decreases', 'GMM', 'Stock Price', 'FININSTRUMENTINFO'), ('Advanced Micro Devices Inc', 'COMPANY', 'Decreases', 'GMM', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:16:54Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 21.067243917 seconds
+2026-07-09T16:16:54Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:17:19Z - INFO - [local_do_inference] output_triplets (idx 86):
+[('AI', 'CONCEPT', 'Drives', 'GMM', 'Market Transformation', 'CONCEPT'), ('Cloud Computing', 'PRODUCT', 'Contributes To', 'GMM', 'Market Transformation', 'CONCEPT'), ('IoT', 'PRODUCT', 'Contributes To', 'GMM', 'Market Transformation', 'CONCEPT'), ('Advanced Micro Devices', 'COMPANY', 'Competes With', 'SSI', 'AMD', 'COMPANY'), ('Advanced Micro Devices', 'COMPANY', 'Experiences Comeback', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:17:19Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 24.370709709 seconds
+2026-07-09T16:17:19Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:17:32Z - INFO - [local_do_inference] output_triplets (idx 87):
+[('Advanced Micro Devices', 'COMPANY', 'Has Price Resistance', 'GFMK', 'Stock Price', 'FININSTRUMENTINFO'), ('Advanced Micro Devices', 'COMPANY', 'Potential Breakout Over', 'SSI', 'Price Level', 'CONCEPT')]
+2026-07-09T16:17:32Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 13.863579459 seconds
+2026-07-09T16:17:32Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:18:03Z - INFO - [local_do_inference] output_triplets (idx 88):
+[('AMD', 'COMPANY', 'Competes With', 'SSI', 'NVIDIA', 'COMPANY'), ('AMD', 'COMPANY', 'Works With', 'SSI', 'Sony', 'COMPANY'), ('AMD', 'COMPANY', 'Works With', 'SSI', 'Microsoft', 'COMPANY'), ('APUs', 'PRODUCT', 'Derives Revenue From', 'SSI', 'Gaming Consoles', 'PRODUCT'), ('Sony', 'COMPANY', 'Releases', 'SSI', 'NextGeneration Gaming Console', 'PRODUCT'), ('Microsoft', 'COMPANY', 'Releases', 'SSI', 'NextGeneration Gaming Console', 'PRODUCT')]
+2026-07-09T16:18:03Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 30.242826250 seconds
+2026-07-09T16:18:03Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:18:32Z - INFO - [local_do_inference] output_triplets (idx 89):
+[('NVIDIA', 'COMPANY', 'Offers', 'SSI', 'DRIVE AutoPilot', 'PRODUCT'), ('Qualcomm', 'COMPANY', 'Offers', 'SSI', 'Snapdragon Ride', 'PRODUCT'), ('Sony', 'COMPANY', 'Supplies', 'SSI', 'Image Sensors', 'PRODUCT'), ('Smartphone Makers', 'CONCEPT', 'Buys', 'SSI', 'Image Sensors', 'PRODUCT'), ('Connected Cars', 'CONCEPT', 'Demand Increases For', 'SSI', 'Cameras', 'PRODUCT'), ('Driverless Cars', 'CONCEPT', 'Demand Increases For', 'SSI', 'Cameras', 'PRODUCT')]
+2026-07-09T16:18:32Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 29.243333542 seconds
+2026-07-09T16:18:32Z - INFO - [_save_batch] Processed up to index 89 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:18:32Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:19:05Z - INFO - [local_do_inference] output_triplets (idx 90):
+[('Qualcomm', 'COMPANY', 'Generates Revenue From', 'SSI', 'Smartphone Market', 'SECTOR'), ('Qualcomm', 'COMPANY', 'Pivots', 'SSI', 'ARMbased Chipset', 'PRODUCT'), ('Qualcomm', 'COMPANY', 'Partners With', 'SSI', 'Audi', 'COMPANY'), ('Qualcomm', 'COMPANY', 'Partners With', 'SSI', 'Lamborghini', 'COMPANY'), ('Qualcomm', 'COMPANY', 'Partners With', 'SSI', 'Tesla Motors', 'COMPANY'), ('Tegrapowered Infotainment and Navigation Systems', 'PRODUCT', 'Installed In', 'SSI', 'Vehicles', 'CONCEPT')]
+2026-07-09T16:19:05Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 33.287830000 seconds
+2026-07-09T16:19:05Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:19:35Z - INFO - [local_do_inference] output_triplets (idx 91):
+[('AMD', 'COMPANY', 'Is Cheaper Than', 'GMM', 'Nvidia', 'COMPANY'), ('AMD', 'COMPANY', 'Is More Expensive Than', 'GMM', 'Intel', 'COMPANY'), ('Su', 'CONCEPT', 'Focuses On', 'SSI', 'FiveYear Roadmap', 'CONCEPT'), ('Su', 'CONCEPT', 'Spends Little Time Concerned About', 'SSI', 'Competition', 'CONCEPT')]
+2026-07-09T16:19:35Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 30.191252208 seconds
+2026-07-09T16:19:35Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:20:14Z - INFO - [local_do_inference] output_triplets (idx 92):
+[('TSM', 'STOCKTICKER', 'Represents', 'GFMK', 'Taiwan Semiconductor Manufacturing Co Ltd', 'COMPANY'), ('INTC', 'STOCKTICKER', 'Represents', 'GFMK', 'Intel Corp', 'COMPANY'), ('MU', 'STOCKTICKER', 'Represents', 'GFMK', 'Micron Technology Inc', 'COMPANY'), ('Taiwan Semiconductor Manufacturing Co Ltd', 'COMPANY', 'Decreases In Value', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Intel Corp', 'COMPANY', 'Decreases In Value', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Micron Technology Inc', 'COMPANY', 'Decreases In Value', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:20:14Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 38.248356959 seconds
+2026-07-09T16:20:14Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:20:43Z - INFO - [local_do_inference] output_triplets (idx 93):
+[('Dow Jones Industrial Average', 'FININSTRUMENTINFO', 'Increases By', 'GMM', '015', 'MACROINDICATOR'), ('JPMorgan Chase', 'COMPANY', 'Beats', 'SSI', 'Earnings Estimates', 'CONCEPT'), ('Maxim', 'COMPANY', 'Needs', 'GMM', 'Upside Surprise', 'CONCEPT'), ('Maxim', 'COMPANY', 'Outperforms', 'SSI', 'Earnings Estimates', 'CONCEPT'), ('Fiscal Q2 Earnings', 'EVENT', 'Impacts', 'GMM', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:20:43Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 29.843951541 seconds
+2026-07-09T16:20:43Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:21:13Z - INFO - [local_do_inference] output_triplets (idx 94):
+[('Bank of America', 'FINANCIALENTITY', 'Experiences Price Drop', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Advanced Micro Devices', 'COMPANY', 'Experiences Price Gain', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Twilio', 'COMPANY', 'Outperforms', 'SSI', 'iShares ESG MSCI USA ETF', 'FININSTRUMENTINFO'), ('Target', 'COMPANY', 'Underperforms', 'SSI', 'iShares ESG MSCI USA ETF', 'FININSTRUMENTINFO')]
+2026-07-09T16:21:13Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 29.828514916 seconds
+2026-07-09T16:21:13Z - INFO - [_save_batch] Processed up to index 94 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:21:13Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:22:02Z - INFO - [local_do_inference] output_triplets (idx 95):
+[('Traders', 'CONCEPT', 'Buy', 'SSI', '335 Strike Call Option', 'DERIVATIVE'), ('335 Strike Call Option', 'DERIVATIVE', 'Derives Value From', 'SSI', 'BA', 'COMPANY'), ('Call Option Volume', 'FININSTRUMENTINFO', 'Signifies', 'SSI', 'Bullish Sentiment', 'CONCEPT'), ('Traders', 'CONCEPT', 'Buy', 'SSI', '70 Strike Call Option', 'DERIVATIVE'), ('70 Strike Call Option', 'DERIVATIVE', 'Derives Value From', 'SSI', 'WDC', 'COMPANY'), ('Call Option Volume', 'FININSTRUMENTINFO', 'Signifies', 'SSI', 'Bullish Sentiment', 'CONCEPT'), ('Traders', 'CONCEPT', 'Buy', 'SSI', '115 Strike Call Option', 'DERIVATIVE'), ('115 Strike Call Option', 'DERIVATIVE', 'Derives Value From', 'SSI', 'ADI', 'COMPANY')]
+2026-07-09T16:22:02Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 48.244474375 seconds
+2026-07-09T16:22:02Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:23:08Z - INFO - [local_do_inference] output_triplets (idx 96):
+[('Amazoncom Inc', 'COMPANY', 'Trades Flat', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Texas Instruments Inc', 'COMPANY', 'Decreases', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('ConocoPhillips', 'COMPANY', 'Decreases', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('IVW', 'STOCKTICKER', 'Has Components', 'GFMK', 'Amazoncom Inc', 'COMPANY'), ('IVW', 'STOCKTICKER', 'Has Components', 'GFMK', 'Texas Instruments Inc', 'COMPANY'), ('IVW', 'STOCKTICKER', 'Has Components', 'GFMK', 'ConocoPhillips', 'COMPANY'), ('IVW', 'STOCKTICKER', 'Tracks', 'GFMK', '200 Day Moving Average', 'FININSTRUMENTINFO'), ('IVW', 'STOCKTICKER', 'Low Point In 52 Week Range', 'GFMK', '15633', 'CURRENCY'), ('IVW', 'STOCKTICKER', 'High Point In 52 Week Range', 'GFMK', '20045', 'CURRENCY'), ('IVW', 'STOCKTICKER', 'Last Trade Price', 'GFMK', '20018', 'CURRENCY')]
+2026-07-09T16:23:08Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 66.001627625 seconds
+2026-07-09T16:23:08Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:24:08Z - INFO - [local_do_inference] output_triplets (idx 97):
+[('Seagate', 'COMPANY', 'Avoids', 'SSI', 'Sharp Declines', 'CONCEPT'), ('Micron', 'COMPANY', 'Experiences', 'SSI', 'Sharp Declines', 'CONCEPT'), ('Western Digital', 'COMPANY', 'Experiences', 'SSI', 'Sharp Declines', 'CONCEPT'), ('Data Center Construction', 'CONCEPT', 'Slows Down', 'GMM', 'Last Year', 'CONCEPT'), ('Economic Uncertainty', 'CONCEPT', 'Due To', 'SSI', 'Trade Wars', 'CONCEPT'), ('Seagate', 'COMPANY', 'Takes Toll On', 'SSI', 'Sales Growth', 'CONCEPT'), ('AIbased Video Surveillance', 'PRODUCT', 'Emerging In', 'GMM', 'Market', 'CONCEPT'), ('Smart Factories', 'PRODUCT', 'Emerging In', 'GMM', 'Market', 'CONCEPT'), ('Digitalmemory Makers', 'CONCEPT', 'Benefit From', 'SSI', 'Intense Data Processing And Storage', 'CONCEPT'), ('Seagate', 'COMPANY', 'Forecasted To Return To', 'SSI', 'Yearoveryear Sales Growth', 'ECONINDICATOR'), ('Seagate', 'COMPANY', 'Close To Even On', 'SSI', 'Bottom Line', 'FININSTRUMENTINFO')]
+2026-07-09T16:24:08Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 60.541505958 seconds
+2026-07-09T16:24:08Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:24:39Z - INFO - [local_do_inference] output_triplets (idx 98):
+[('Micron', 'COMPANY', 'Benefits From', 'SSI', '5G Devices', 'CONCEPT'), ('Micron', 'COMPANY', 'Benefits From', 'SSI', 'DRAM', 'PRODUCT'), ('Micron', 'COMPANY', 'Benefits From', 'SSI', 'NAND Memory', 'PRODUCT'), ('MU Stock', 'STOCKTICKER', 'Expected To Rise Due To', 'GMM', 'Earnings Exceeding Expectations', 'CONCEPT'), ('MU Stock', 'STOCKTICKER', 'Has Forward PE Ratio Of', 'FININSTRUMENTINFO', '258', 'NUMBER')]
+2026-07-09T16:24:39Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 30.794344041 seconds
+2026-07-09T16:24:39Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:25:25Z - INFO - [local_do_inference] output_triplets (idx 99):
+[('USMexicoCanada Free Trade Agreement', 'CONCEPT', 'Approved By', 'GMM', 'Senate', 'FINANCIALENTITY'), ('Free Trade Agreement', 'CONCEPT', 'Positive Impact On', 'GMM', 'Stock Market', 'FININSTRUMENTINFO'), ('Technology Sector', 'SECTOR', 'Dominates', 'SSI', 'SP 500 Index', 'FININSTRUMENTINFO'), ('Financial Services Sector', 'SECTOR', 'Dominates', 'SSI', 'SP 500 Index', 'FININSTRUMENTINFO'), ('Intel', 'COMPANY', 'Reports', 'SSI', 'Revenue', 'ECONINDICATOR'), ('Intel', 'COMPANY', 'Positive Impact On', 'GMM', 'Dow Jones Industrial Average', 'FININSTRUMENTINFO')]
+2026-07-09T16:25:25Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 45.984194250 seconds
+2026-07-09T16:25:25Z - INFO - [_save_batch] Processed up to index 99 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:25:25Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:26:02Z - INFO - [local_do_inference] output_triplets (idx 100):
+[('Taiwan Semiconductor Manufacturing', 'COMPANY', 'Reports', 'SSI', 'Q4 Earnings', 'ECONINDICATOR'), ('Q4 Earnings', 'ECONINDICATOR', 'Surpasses', 'SSI', 'Analyst Estimates', 'CONCEPT'), ('Taiwan Semiconductor Manufacturing', 'COMPANY', 'Positive Impact On', 'GMM', 'Top Technology Stocks', 'SECTOR'), ('Renesola', 'COMPANY', 'Cuts Guidance', 'SSI', 'Revenue', 'ECONINDICATOR')]
+2026-07-09T16:26:02Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 37.528623042 seconds
+2026-07-09T16:26:02Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:26:29Z - INFO - [local_do_inference] output_triplets (idx 101):
+[('AMD', 'COMPANY', 'Outperforms', 'SSI', 'Competitors', 'CONCEPT'), ('AMD', 'COMPANY', 'Delivers', 'SSI', 'Stock Return', 'FININSTRUMENTINFO'), ('AMD', 'COMPANY', 'Is Most Valuable Since', 'GMM', '2000', 'YEAR'), ('Analysts', 'CONCEPT', 'Bet Against', 'SSI', 'AMD Stock', 'FININSTRUMENTINFO')]
+2026-07-09T16:26:29Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 26.098334208 seconds
+2026-07-09T16:26:29Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:27:13Z - INFO - [local_do_inference] output_triplets (idx 102):
+[('Intel', 'COMPANY', 'Experiences Production Issues', 'SSI', 'Manufacturing', 'CONCEPT'), ('INTC', 'STOCKTICKER', 'Derives Value From', 'GFMK', 'Intel', 'COMPANY'), ('Xerox', 'COMPANY', 'Makes Acquisition Overtures Toward', 'SSI', 'HP', 'COMPANY'), ('HP', 'COMPANY', 'Is Potentially Acquired By', 'SSI', 'Xerox', 'COMPANY'), ('Microsoft', 'COMPANY', 'Ends Support For', 'GMM', 'Windows 7 Operating System', 'PRODUCT')]
+2026-07-09T16:27:13Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 44.220470208 seconds
+2026-07-09T16:27:13Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:27:47Z - INFO - [local_do_inference] output_triplets (idx 103):
+[('28 Strike Call Option', 'DERIVATIVE', 'Derives Value From', 'SSI', 'Marvell Technology Group Ltd', 'COMPANY'), ('28 Strike Call Option', 'DERIVATIVE', 'High Volume Traded For', 'SSI', 'MRVL', 'STOCKTICKER'), ('49604 Contracts', 'FININSTRUMENTINFO', 'Represent Underlying Shares Of', 'SSI', '50 million shares', 'FININSTRUMENTINFO')]
+2026-07-09T16:27:47Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 34.526448917 seconds
+2026-07-09T16:27:47Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:28:04Z - INFO - [local_do_inference] output_triplets (idx 104):
+[('AMD', 'COMPANY', 'Increases', 'GMM', 'Stock Price', 'FININSTRUMENTINFO'), ('Stock Price', 'FININSTRUMENTINFO', 'Brings', 'SSI', 'Profits', 'CONCEPT'), ('AMD', 'COMPANY', 'Reaches', 'GFMK', 'Earnings Report', 'EVENT')]
+2026-07-09T16:28:04Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 16.866820250 seconds
+2026-07-09T16:28:04Z - INFO - [_save_batch] Processed up to index 104 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:28:04Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:28:16Z - INFO - [local_do_inference] output_triplets (idx 105):
+[('Taiwan Semiconductor', 'COMPANY', 'Reports', 'SSI', 'Earnings', 'CONCEPT'), ('Stock Price', 'FININSTRUMENTINFO', 'Is Flat On', 'GMM', 'Thursday', 'EVENT')]
+2026-07-09T16:28:16Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 11.904258542 seconds
+2026-07-09T16:28:16Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:28:49Z - INFO - [local_do_inference] output_triplets (idx 106):
+[('Technology Stocks', 'CONCEPT', 'Advance', 'GMM', 'SP 500', 'FININSTRUMENTINFO'), ('Philadelphia Semiconductor Index', 'FININSTRUMENTINFO', 'Increases', 'GMM', 'TSMC', 'COMPANY'), ('TSMC', 'COMPANY', 'Reports Exceeding Revenue', 'SSI', 'Q4 Net Income', 'ECONINDICATOR'), ('TSMC', 'COMPANY', 'Outperforms', 'SSI', 'Wall Street Estimates', 'CONCEPT'), ('CenturyLink', 'COMPANY', 'Wins', 'SSI', 'Task Order', 'CONCEPT'), ('CenturyLink', 'COMPANY', 'Gains', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:28:49Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 32.618190208 seconds
+2026-07-09T16:28:49Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:29:23Z - INFO - [local_do_inference] output_triplets (idx 107):
+[('TSMC', 'COMPANY', 'Reports', 'SSI', 'Net Income', 'ECONINDICATOR'), ('Net Income', 'ECONINDICATOR', 'Increases By', 'SSI', '161 Percent', 'CONCEPT'), ('TSMC', 'COMPANY', 'Reports', 'SSI', 'Consolidated Revenue', 'ECONINDICATOR'), ('Consolidated Revenue', 'ECONINDICATOR', 'Increases By', 'SSI', '95 Percent', 'CONCEPT'), ('FourthQuarter Revenue', 'FININSTRUMENTINFO', 'Converts To', 'GFMK', '1039 Billion USD', 'CURRENCY'), ('FourthQuarter Revenue', 'ECONINDICATOR', 'Increases By', 'SSI', '106 Percent', 'CONCEPT')]
+2026-07-09T16:29:23Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 34.741419708 seconds
+2026-07-09T16:29:23Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:29:42Z - INFO - [local_do_inference] output_triplets (idx 108):
+[('Advanced Micro Devices', 'COMPANY', 'Trades Up', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Advanced Micro Devices', 'COMPANY', 'Outperforms', 'SSI', 'Nasdaq 100 index', 'FININSTRUMENTINFO'), ('Advanced Micro Devices', 'COMPANY', 'Registers Gain', 'GMM', 'Year To Date Performance', 'CONCEPT')]
+2026-07-09T16:29:42Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 18.731629042 seconds
+2026-07-09T16:29:42Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:30:31Z - INFO - [local_do_inference] output_triplets (idx 109):
+[('Advanced Micro Devices Inc', 'COMPANY', 'Overtakes', 'GMM', 'Ecolab Inc', 'COMPANY'), ('Advanced Micro Devices Inc', 'COMPANY', 'Has Market Cap Of', 'FININSTRUMENTINFO', '5672 billion USD', 'CURRENCY'), ('Ecolab Inc', 'COMPANY', 'Has Market Cap Of', 'FININSTRUMENTINFO', '5637 billion USD', 'CURRENCY'), ('Advanced Micro Devices Inc', 'STOCKTICKER', 'Is Symbol For', 'GFMK', 'AMD', 'STOCKTICKER'), ('Ecolab Inc', 'STOCKTICKER', 'Is Symbol For', 'GFMK', 'ECL', 'STOCKTICKER')]
+2026-07-09T16:30:31Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 48.351727875 seconds
+2026-07-09T16:30:31Z - INFO - [_save_batch] Processed up to index 109 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:30:31Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:31:09Z - INFO - [local_do_inference] output_triplets (idx 110):
+[('Advanced Micro Devices', 'COMPANY', 'Hires', 'SSI', 'Daniel McNamara', 'CONCEPT'), ('Advanced Micro Devices', 'COMPANY', 'Announces', 'SSI', 'Internal Promotions', 'CONCEPT'), ('Advanced Micro Devices', 'COMPANY', 'Benefits From', 'SSI', 'Competitive Advantages', 'CONCEPT'), ('Progress Software', 'COMPANY', 'Reports', 'SSI', 'Q4 Financial Results', 'ECONINDICATOR'), ('Progress Software', 'COMPANY', 'Exceeds', 'SSI', 'Analyst Estimates', 'CONCEPT'), ('Progress Software', 'COMPANY', 'Increases Guidance On', 'SSI', 'Net Income', 'ECONINDICATOR'), ('Progress Software', 'COMPANY', 'Increases Guidance On', 'SSI', 'Revenue', 'ECONINDICATOR')]
+2026-07-09T16:31:09Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 38.894341708 seconds
+2026-07-09T16:31:09Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:31:58Z - INFO - [local_do_inference] output_triplets (idx 111):
+[('TSM', 'STOCKTICKER', 'Represents', 'GFMK', 'Taiwan Semiconductor Manufacturing Co Ltd', 'COMPANY'), ('Trailing Twelve Month Trading History', 'FININSTRUMENTINFO', 'Highlights', 'SSI', '6000 Strike Call Option', 'DERIVATIVE'), ('6000 Strike Call Option', 'DERIVATIVE', 'Represents', 'GFMK', '3 Premium To Current Stock Price', 'CONCEPT'), ('6000 Strike Call Option', 'DERIVATIVE', 'Could Expire Worthless', 'SSI', 'Covered Call Contract', 'FININSTRUMENTINFO'), ('6000 Strike Call Option', 'DERIVATIVE', 'Impacts', 'GFMK', 'Investor Profits', 'CONCEPT'), ('Taiwan Semiconductor Manufacturing Co Ltd', 'COMPANY', 'Issues New Options', 'SSI', 'May 15th Expiration', 'EVENT')]
+2026-07-09T16:31:58Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 48.300624250 seconds
+2026-07-09T16:31:58Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:32:18Z - INFO - [local_do_inference] output_triplets (idx 112):
+[('Taiwan Semiconductor Manufacturing', 'COMPANY', 'Reports', 'SSI', 'Revenue Growth', 'ECONINDICATOR'), ('Taiwan Semiconductor Manufacturing', 'COMPANY', 'Delivers Products For', 'SSI', '5G Wireless Standards', 'CONCEPT')]
+2026-07-09T16:32:18Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 20.321775500 seconds
+2026-07-09T16:32:18Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:33:00Z - INFO - [local_do_inference] output_triplets (idx 113):
+[('Seagate', 'COMPANY', 'Faces Competition From', 'GMM', 'Samsung', 'COMPANY'), ('Seagate', 'COMPANY', 'Faces Competition From', 'GMM', 'Western Digital', 'COMPANY'), ('Seagate', 'COMPANY', 'Faces Competition From', 'GMM', 'Kingston', 'COMPANY'), ('Seagate', 'COMPANY', 'Faces Competition From', 'GMM', 'Toshiba', 'COMPANY'), ('Seagate', 'COMPANY', 'Faces Competition From', 'GMM', 'Micron', 'COMPANY'), ('NAND Prices', 'MACROINDICATOR', 'Negative Impact On', 'SSI', 'Seagate', 'COMPANY'), ('Seagate', 'COMPANY', 'Focuses On', 'SSI', 'Enterprise SSDs', 'PRODUCT'), ('Enterprise SSDs', 'PRODUCT', 'Complement', 'GMM', 'Mass Capacity HDD Solution', 'PRODUCT')]
+2026-07-09T16:33:00Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 41.874096583 seconds
+2026-07-09T16:33:00Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:33:20Z - INFO - [local_do_inference] output_triplets (idx 114):
+[('QCOM', 'STOCKTICKER', 'Has Unrealized Gain For', 'GMM', 'Investors', 'CONCEPT'), ('QCOM', 'STOCKTICKER', 'Includes Insider Buys', 'SSI', 'Insiders', 'CONCEPT'), ('QCOM', 'STOCKTICKER', 'Trading At', 'GFMK', '9569 USD', 'FININSTRUMENTINFO')]
+2026-07-09T16:33:20Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 19.985968541 seconds
+2026-07-09T16:33:20Z - INFO - [_save_batch] Processed up to index 114 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:33:20Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:33:43Z - INFO - [local_do_inference] output_triplets (idx 115):
+[('AMD', 'COMPANY', 'Wins Contract From', 'SSI', 'Sony', 'COMPANY'), ('Sony', 'COMPANY', 'Announces Use Of', 'SSI', 'Chips', 'PRODUCT'), ('Geopolitical Tensions', 'CONCEPT', 'Increase Risk Of', 'GMM', 'Asymmetric Attacks', 'CONCEPT'), ('AI', 'CONCEPT', 'Plays Crucial Role In', 'GMM', 'Defensive Mechanisms', 'CONCEPT')]
+2026-07-09T16:33:43Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 23.028079750 seconds
+2026-07-09T16:33:43Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:34:09Z - INFO - [local_do_inference] output_triplets (idx 116):
+[('AMD', 'COMPANY', 'Competes With', 'SSI', 'Nvidia', 'COMPANY'), ('AMD', 'COMPANY', 'Stock Price', 'GFMK', '155 Increase', 'FININSTRUMENTINFO'), ('Nvidia', 'COMPANY', 'Stock Price', 'GFMK', '67 Increase', 'FININSTRUMENTINFO')]
+2026-07-09T16:34:09Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 25.603656500 seconds
+2026-07-09T16:34:09Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:34:28Z - INFO - [local_do_inference] output_triplets (idx 117):
+[('Qualcomm', 'COMPANY', 'Outperforms', 'GMM', 'Nasdaq 100 Index', 'FININSTRUMENTINFO'), ('Qualcomm', 'COMPANY', 'Increases', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:34:28Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 19.737740666 seconds
+2026-07-09T16:34:28Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:35:17Z - INFO - [local_do_inference] output_triplets (idx 118):
+[('Intel Corporation', 'COMPANY', 'Increases', 'GMM', 'Patents', 'ECONINDICATOR'), ('IBM', 'COMPANY', 'Improves', 'SSI', 'Competitive Position', 'CONCEPT'), ('IBM', 'COMPANY', 'Enhances', 'SSI', 'Profit Dynamics', 'CONCEPT'), ('Intel Corporation', 'COMPANY', 'Announces', 'SSI', 'Restructuring Initiative', 'CONCEPT')]
+2026-07-09T16:35:17Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 48.179464834 seconds
+2026-07-09T16:35:17Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:35:59Z - INFO - [local_do_inference] output_triplets (idx 119):
+[('Advanced Micro Devices', 'COMPANY', 'Hires', 'SSI', 'Daniel McNamara', 'CONCEPT'), ('Daniel McNamara', 'CONCEPT', 'Previously At', 'GFMK', 'Intel', 'FINANCIALENTITY'), ('Advanced Micro Devices', 'COMPANY', 'Competes With', 'GMM', 'Intel', 'FINANCIALENTITY'), ('Progress Software', 'COMPANY', 'Reports', 'SSI', 'Q4 Financial Results', 'ECONINDICATOR'), ('Progress Software', 'COMPANY', 'Exceeds', 'SSI', 'Wall Street Estimates', 'CONCEPT'), ('Progress Software', 'COMPANY', 'Hires', 'SSI', 'Anthony Folger', 'CONCEPT'), ('Anthony Folger', 'CONCEPT', 'Previously At', 'GFMK', 'Carbonite', 'COMPANY')]
+2026-07-09T16:35:59Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 42.781166667 seconds
+2026-07-09T16:35:59Z - INFO - [_save_batch] Processed up to index 119 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:35:59Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:36:30Z - INFO - [local_do_inference] output_triplets (idx 120):
+[('Qualcomm', 'COMPANY', 'Benefit From', 'GMM', 'Intellectual Property Revenue', 'CONCEPT'), ('Smartphone Manufacturers', 'CONCEPT', 'Relies On', 'SSI', 'Qualcomm', 'COMPANY'), ('Qualcomm', 'COMPANY', 'Leads In', 'GMM', '5G Technology', 'CONCEPT'), ('QCOM Stock', 'STOCKTICKER', 'Increases', 'SSI', 'Stock Price', 'FININSTRUMENTINFO')]
+2026-07-09T16:36:30Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 31.024060208 seconds
+2026-07-09T16:36:30Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:37:08Z - INFO - [local_do_inference] output_triplets (idx 121):
+[('Marvell Technology', 'COMPANY', 'Beneficiary Of', 'SSI', '5G Base Station Market', 'CONCEPT'), ('5G Base Station Market', 'CONCEPT', 'Expected To Generate', 'GMM', '6 billion in annual sales', 'FININSTRUMENTINFO'), ('6 billion in annual sales', 'FININSTRUMENTINFO', 'Exceeds', 'SSI', 'Wall Street Analyst Expectations', 'CONCEPT'), ('Marvell Technology', 'COMPANY', 'Competes With', 'SSI', 'Huawei', 'COMPANY'), ('Huawei ability to ship critical 5G infrastructure products', 'CONCEPT', 'Limited In', 'GMM', 'International Markets', 'CONCEPT')]
+2026-07-09T16:37:08Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 37.583945500 seconds
+2026-07-09T16:37:08Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:37:59Z - INFO - [local_do_inference] output_triplets (idx 122):
+[('Banco Bradesco', 'COMPANY', 'Experiences Price Increase', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Taiwan Semiconductor Manufacturing', 'COMPANY', 'Experiences Price Decrease', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Invesco International Dividend Achievers ETF', 'FININSTRUMENTINFO', 'Sees High Trading Volume', 'GMM', 'Trading Session', 'EVENT'), ('Brookfield Property Partners', 'COMPANY', 'Outperforms', 'SSI', 'ETF Component Performance', 'CONCEPT'), ('Vodafone Group', 'COMPANY', 'Underperforms', 'SSI', 'ETF Component Performance', 'CONCEPT')]
+2026-07-09T16:37:59Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 51.053922083 seconds
+2026-07-09T16:37:59Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:38:15Z - INFO - [local_do_inference] output_triplets (idx 123):
+[('Qualcomm', 'COMPANY', 'Sees Gain', 'SSI', 'Stock Price', 'FININSTRUMENTINFO'), ('Qualcomm', 'COMPANY', 'Beats', 'SSI', 'Earnings Estimates', 'CONCEPT')]
+2026-07-09T16:38:15Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 16.434186625 seconds
+2026-07-09T16:38:15Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:38:26Z - INFO - [local_do_inference] output_triplets (idx 124):
+[('Qualcomm', 'COMPANY', 'Faces Legal Troubles With', 'SSI', 'Apple', 'COMPANY')]
+2026-07-09T16:38:26Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 10.520156584 seconds
+2026-07-09T16:38:26Z - INFO - [_save_batch] Processed up to index 124 and saved 5 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:38:26Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:38:41Z - INFO - [local_do_inference] output_triplets (idx 125):
+[('Micron Technology', 'COMPANY', 'Reports', 'SSI', 'Second Quarter Results', 'CONCEPT'), ('Second Quarter Results', 'CONCEPT', 'Expected To Be', 'GMM', 'Bottom Of Semiconductor Cycle', 'CONCEPT')]
+2026-07-09T16:38:41Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 14.668887667 seconds
+2026-07-09T16:38:41Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:39:27Z - INFO - [local_do_inference] output_triplets (idx 126):
+[('5G', 'CONCEPT', 'Positive Impact On', 'SSI', 'Memory Content Growth', 'ECONINDICATOR'), ('5G', 'CONCEPT', 'Positive Impact On', 'SSI', 'Storage Content Growth', 'ECONINDICATOR'), ('5G', 'CONCEPT', 'Increases', 'SSI', 'Smartphone Unit Sales', 'ECONINDICATOR'), ('Micron Technology', 'COMPANY', 'Launches', 'SSI', 'Affordable 5G Phones', 'PRODUCT'), ('Affordable 5G Phones', 'PRODUCT', 'Feature', 'SSI', 'Minimum of 6 GB DRAM', 'PRODUCT'), ('Company', 'CONCEPT', 'Repositions Portfolio To Take Advantage Of', 'SSI', 'Industry Catalyst', 'CONCEPT')]
+2026-07-09T16:39:27Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 46.573074916 seconds
+2026-07-09T16:39:27Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:39:59Z - INFO - [local_do_inference] output_triplets (idx 127):
+[('Intel', 'COMPANY', 'Dominates', 'SSI', 'CPU Market', 'CONCEPT'), ('NVIDIA', 'COMPANY', 'Dominates', 'SSI', 'GPU Market', 'CONCEPT'), ('Advanced Micro Devices', 'COMPANY', 'Resurges', 'SSI', 'Market Share', 'ECONINDICATOR'), ('Advanced Micro Devices', 'COMPANY', 'Slashes', 'SSI', 'Price', 'FININSTRUMENTINFO'), ('Lseries Cascade Lake Xeon chips', 'PRODUCT', 'Supports', 'SSI', 'Memory Capacity', 'CONCEPT')]
+2026-07-09T16:39:59Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 31.839705417 seconds
+2026-07-09T16:39:59Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-09T16:40:30Z - INFO - [local_do_inference] output_triplets (idx 128):
+[('Micron Technology', 'COMPANY', 'Trades On', 'GFMK', 'NASDAQ', 'FININSTRUMENTINFO'), ('NVIDIA', 'COMPANY', 'Trades On', 'GFMK', 'NASDAQ', 'FININSTRUMENTINFO'), ('salesforcecom', 'COMPANY', 'Trades On', 'GFMK', 'NYSE', 'FININSTRUMENTINFO'), ('Memory Industry', 'SECTOR', 'Consolidates', 'GMM', 'Micron Technology', 'COMPANY'), ('Memory Industry', 'SECTOR', 'Characterized By', 'GMM', 'Cyclical Nature', 'CONCEPT')]
+2026-07-09T16:40:30Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 30.990601834 seconds
+2026-07-09T16:40:30Z - INFO - [_save_batch] Processed up to index 128 and saved 4 rows to output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv.
+2026-07-09T16:40:30Z - INFO - [local_do_inference] Finished processing all articles. All processed data is saved to CSV.
+2026-07-09T16:40:30Z - INFO - [TripletGenerator::execute_inference] Finished saving csv to disk at: output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv

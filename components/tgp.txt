@@ -1,0 +1,123 @@
+You are an expert Financial Knowledge Graph Engineer. Your goal is to extract high-precision, non-redundant, and financially actionable triplets from the INPUT_TEXT.
+
+### CORE OBJECTIVE
+Construct a knowledge graph where nodes are **Specific Named Entities** and edges are **Directional Financial Relationships**.
+Your output must pass strict validation for **Uniqueness** (no redundancy), **Consistency** (no contradictions), and **Semantic Validity** (logical flows).
+
+---
+
+### 1. ENTITY DEFINITIONS & HIERARCHY
+Extract entities using ONLY the following types. Use the most specific type possible.
+
+* **FINANCIAL_ENTITY**: Banks, Hedge Funds, Market Makers (e.g., "Goldman Sachs", "Citadel", "Federal Reserve"). *Distinguish these from general Companies.*
+* **COMPANY**: General corporations (e.g., "Tesla", "Walmart", "Nvidia").
+* **STOCK_TICKER**: Official stock symbols (e.g., "TSLA", "WMT", "NVDA").
+* **SECTOR**: Industry groups (e.g., "Semiconductors", "Consumer Discretionary").
+* **MACRO_INDICATOR**: Economic stats (e.g., "Inflation", "CPI", "Unemployment Rate", "GDP").
+* **ECON_INDICATOR**: Corporate KPIs (e.g., "Revenue", "EBITDA", "Free Cash Flow", "Margins").
+* **FIN_INSTRUMENT_INFO**: Stock metadata (e.g., "Stock Price", "Market Cap", "Dividend Yield").
+* **PRODUCT**: Tangible goods/services (e.g., "H100 GPU", "Model Y", "Azure").
+* **DERIVATIVE**: Options, Futures, Swaps (e.g., "Call Options", "Brent Crude Futures").
+* **CURRENCY**: Fiat or Crypto (e.g., "USD", "JPY", "Bitcoin").
+* **BOND**: Debt instruments (e.g., "10-Year Treasury Yield").
+* **EVENT**: Specific, material occasions (e.g., "Q3 Earnings Call", "FOMC Meeting").
+* **CONCEPT**: Abstract business drivers (e.g., "AI Demand", "Supply Chain Disruption").
+
+**Normalization Rules:**
+1.  **Canonical Names:** Convert "Alphabet Inc Class A" -> "Alphabet Inc".
+2.  **Canonical Concepts:** Normalize synonyms (e.g., "Top Line" -> "Revenue").
+3.  **Preserve Spacing:** "Goldman Sachs" (Correct) vs "GoldmanSachs" (INVALID).
+4.  **No Dates/Numbers:** "Q3 2024 Revenue" -> "Revenue". "5% Drop" -> INVALID.
+5.  **No Generic Terms:** Do not extract "The Company", "The Sector", or "Analysts".
+
+---
+
+### 2. RELATIONSHIP RULES
+Extract **Active, Directional** verbs that imply financial impact.
+* **Format:** Use natural language with spaces. **NO** underscores or CamelCase.
+* **Bad:** "Competes_With", "IncreasesGuidance"
+* **Good:** "Competes With", "Increases Guidance"
+* **Strong Verbs:** "Acquires", "Divests", "Outperforms", "Underperforms", "Increases Guidance", "Cuts Guidance", "Launches", "Regulates", "Sues", "Partners With", "Surpasses".
+* **Weak Verbs (AVOID):** "Says", "Mentions", "Thinks", "Believes", "Is", "Has".
+
+**Relation Category Types:**
+* **SSI** (Sector Specific Insights): Micro-level news (Company A buys Company B).
+* **GMM** (Global Market Movements): Macro-level news (Fed rates affect Tech Sector).
+* **GFMK** (General Financial Market Knowledge): Educational/Static facts.
+
+---
+
+### 3. QUALITY ASSURANCE (Mental Sandbox)
+Before outputting, verify the following constraints:
+
+* **Constraint 1: Uniqueness (Anti-Redundancy)**
+    * *Anti-Reciprocity:* Do NOT output [('A', 'Impacts', 'B'), ('B', 'Is Impacted By', 'A')]. Output ONLY the active direction.
+    * *Anti-Synonym:* Do NOT output multiple triplets for the same fact using different verbs.
+
+* **Constraint 2: Semantic Validity**
+    * *Subject-Verb Logic:* Ensure the Entity Type allows the Action.
+    * *Bad:* [('Stock Price', 'Announces', 'Earnings')] -> A price cannot announce.
+    * *Fix:* [('Company', 'Announces', 'Earnings'), ('Earnings', 'Impacts', 'Stock Price')].
+
+* **Constraint 3: Atomic Granularity**
+    * *Bad:* [('Fed', 'Raises Rates and Causes Crash', 'Market')] -> Too complex.
+    * *Fix:* [('Fed', 'Raises', 'Interest Rates'), ('Interest Rates', 'Negative Impact On', 'Market')].
+
+* **Constraint 4: String Hygiene**
+    * **NO** special characters (like @, #, $, %, &).
+    * **SPACES ARE REQUIRED** between words.
+    * **NO** apostrophes. (e.g., 'Lowes' not 'Lowe's').
+    * *Bad:* 'AdvancedMicroDevices', 'CompetesWith'
+    * *Fix:* 'Advanced Micro Devices', 'Competes With'
+
+---
+
+### 4. EXTENDED FEW-SHOT EXAMPLES
+
+**Example 1: Causal Chain (Macro to Micro)**
+*Input:* "Rising inflation has forced the Fed to hike interest rates, causing a sharp sell-off in the Nasdaq 100."
+*Output:*
+[('Inflation', 'MACRO_INDICATOR', 'Forces', 'GMM', 'Federal Reserve', 'FINANCIAL_ENTITY'),
+ ('Federal Reserve', 'FINANCIAL_ENTITY', 'Increases', 'GMM', 'Interest Rates', 'MACRO_INDICATOR'),
+ ('Interest Rates', 'MACRO_INDICATOR', 'Negative Impact On', 'GMM', 'Nasdaq 100', 'FIN_INSTRUMENT_INFO')]
+
+**Example 2: Corporate Action & Sentiment**
+*Input:* "Nvidia's announcement of the new Blackwell chip sparked a rally in AI-related stocks, although AMD shares slipped."
+*Output:*
+[('Nvidia', 'COMPANY', 'Announces', 'SSI', 'Blackwell chip', 'PRODUCT'),
+ ('Blackwell chip', 'PRODUCT', 'Positive Impact On', 'SSI', 'AI Sector', 'SECTOR'),
+ ('Nvidia', 'COMPANY', 'Competes With', 'SSI', 'AMD', 'COMPANY'),
+ ('AMD', 'COMPANY', 'Experience Price Drop', 'SSI', 'Stock Price', 'FIN_INSTRUMENT_INFO')]
+
+**Example 3: Financial metrics**
+*Input:* "Tesla reported a decline in gross margins to 17.9%, missing analyst estimates."
+*Output:*
+[('Tesla', 'COMPANY', 'Reports', 'SSI', 'Gross Margins', 'ECON_INDICATOR'),
+ ('Gross Margins', 'ECON_INDICATOR', 'Misses', 'SSI', 'Analyst Estimates', 'CONCEPT'),
+ ('Gross Margins', 'ECON_INDICATOR', 'Decreases', 'SSI', 'Profitability', 'ECON_INDICATOR')]
+
+**Example 4: Derivatives & Options**
+*Input:* "Traders are buying the 150 strike calls on Apple, betting on a rally."
+*Output:*
+[('Traders', 'CONCEPT', 'Buy', 'SSI', '150 Strike Call Option', 'DERIVATIVE'),
+ ('150 Strike Call Option', 'DERIVATIVE', 'Derives Value From', 'SSI', 'Apple', 'COMPANY'),
+ ('Call Option Volume', 'FIN_INSTRUMENT_INFO', 'Signifies', 'SSI', 'Bullish Sentiment', 'CONCEPT')]
+
+**Example 5: Supply Chain & Regulation**
+*Input:* "New US export controls on semiconductors will restrict sales to China, hurting revenue for Lam Research."
+*Output:*
+[('US Government', 'FINANCIAL_ENTITY', 'Implements', 'GMM', 'Export Controls', 'CONCEPT'),
+ ('Export Controls', 'CONCEPT', 'Restricts', 'GMM', 'Semiconductor Sales', 'CONCEPT'),
+ ('Export Controls', 'CONCEPT', 'Negative Impact On', 'SSI', 'Lam Research', 'COMPANY'),
+ ('Lam Research', 'COMPANY', 'Forecasts Decline', 'SSI', 'Revenue', 'ECON_INDICATOR')]
+
+---
+
+### INPUT_TEXT:
+{input_text_}
+
+---
+
+### OUTPUT
+Return ONLY the Python list of tuples. No markdown, no explanation.
+TRIPLETS:

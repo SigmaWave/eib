@@ -1,0 +1,9 @@
+2026-07-20T11:28:09Z - INFO - [MetricsComputator::__init__] Loading triplets from output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv...
+2026-07-20T11:28:09Z - INFO - [MetricsComputator::__init__] Normalizing triplets and filtering invalid rows...
+2026-07-20T11:28:09Z - INFO - [MetricsComputator::__init__] Dropped 38 rows due to invalid triplets. Remaining: 84
+2026-07-20T11:28:09Z - INFO - [MetricsComputator::compute_metrics] processing 84 amount of triplets
+2026-07-20T11:29:50Z - INFO - [MetricsComputator::compute_metrics] TXN Better Buy: NXP Semiconductors vs. Texas Instruments requires human review
+self.triplets_df.iloc[row_idx]['output_triplets']="[('Texas Instruments', 'COMPANY', 'Trades As', None, 'TXN', 'STOCKTICKER'), ('NXP Semiconductors', 'COMPANY', 'Trades As', None, 'NXPI', 'STOCKTICKER'), ('Texas Instruments', 'COMPANY', 'Competes With', None, 'NXP Semiconductors', 'COMPANY'), ('ChineseAmerican Trade War', 'CONCEPT', 'Negative Impact On', None, 'Analog Chips', 'PRODUCT'), ('ChineseAmerican Trade War', 'CONCEPT', 'Negative Impact On', None, 'Embedded Chips', 'PRODUCT'), ('ChineseAmerican Trade War', 'CONCEPT', 'Negative Impact On', None, 'Automotive Computing Sector', 'SECTOR'), ('Analog Chips', 'PRODUCT', 'Generates Demand From', None, 'Automotive Computing Sector', 'SECTOR'), ('Embedded Chips', 'PRODUCT', 'Generates Demand From', None, 'Communications Sector', 'SECTOR'), ('Automotive Computing Sector', 'SECTOR', 'Negative Impact On', None, 'Texas Instruments', 'COMPANY')]"
+
+2026-07-20T11:29:50Z - ERROR - [MetricsComputator::compute_metrics] Unexpected error on row 0: [Errno 28] No space left on device: 'output/triplets_claude-sonnet-5_semi_cleaned_data_summary_JudgeLLM_metrics_computation.csv'
+2026-07-20T11:29:50Z - ERROR - [MetricsComputator::compute_metrics] Failed to process row 0. Skipping...

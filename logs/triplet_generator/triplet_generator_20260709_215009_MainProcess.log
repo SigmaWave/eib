@@ -1,0 +1,48 @@
+2026-07-09T19:50:10Z - INFO - [process_data] --- Filtering Applied (2020-01-03 to 2020-01-18 & Semiconductors) ---
+2026-07-09T19:50:10Z - INFO - [process_data] Target Tickers: ['NVDA', 'AMD', 'INTC', 'QCOM', 'MU', 'TSM', 'TXN', 'AMAT', 'ADI', 'MRVL', 'ON']
+2026-07-09T19:50:10Z - INFO - [process_data] Rows Remaining: 177
+2026-07-09T19:50:10Z - INFO - [process_data] Using column for text content: 'summary'
+2026-07-09T19:50:10Z - INFO - [process_data] 
+--- Semiconductor Data Statistics ---
+2026-07-09T19:50:10Z - INFO - [process_data] TICKER     | MONTHS     | TOTAL ARTICLES
+2026-07-09T19:50:10Z - INFO - [process_data] ----------------------------------------
+2026-07-09T19:50:10Z - INFO - [process_data] AMD        | 1          | 52
+2026-07-09T19:50:10Z - INFO - [process_data] INTC       | 1          | 41
+2026-07-09T19:50:10Z - INFO - [process_data] MU         | 1          | 27
+2026-07-09T19:50:10Z - INFO - [process_data] QCOM       | 1          | 21
+2026-07-09T19:50:10Z - INFO - [process_data] TSM        | 1          | 14
+2026-07-09T19:50:10Z - INFO - [process_data] AMAT       | 1          | 8
+2026-07-09T19:50:10Z - INFO - [process_data] TXN        | 1          | 8
+2026-07-09T19:50:10Z - INFO - [process_data] MRVL       | 1          | 3
+2026-07-09T19:50:10Z - INFO - [process_data] ADI        | 1          | 2
+2026-07-09T19:50:10Z - INFO - [process_data] ON         | 1          | 1
+2026-07-09T19:50:10Z - INFO - [process_data] --- Final Cleanup ---
+2026-07-09T19:50:10Z - INFO - [process_data] Rows with valid text/title content: 177
+2026-07-09T19:50:10Z - INFO - [process_data] Loaded and filtered CSV successfully.
+2026-07-09T19:50:10Z - INFO - [TripletGenerator::execute_inference] Finished inference. Saving new csv to disk.
+2026-07-09T19:50:58Z - INFO - [_save_batch] Processed up to index 4 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:51:32Z - INFO - [_save_batch] Processed up to index 9 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:52:15Z - INFO - [_save_batch] Processed up to index 14 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:53:09Z - INFO - [_save_batch] Processed up to index 19 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:53:40Z - INFO - [_save_batch] Processed up to index 24 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:54:21Z - INFO - [_save_batch] Processed up to index 29 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:55:03Z - INFO - [_save_batch] Processed up to index 34 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:55:57Z - INFO - [_save_batch] Processed up to index 39 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:56:47Z - INFO - [_save_batch] Processed up to index 44 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:57:38Z - INFO - [_save_batch] Processed up to index 49 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:58:21Z - INFO - [_save_batch] Processed up to index 54 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:59:03Z - INFO - [_save_batch] Processed up to index 59 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T19:59:47Z - INFO - [_save_batch] Processed up to index 64 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:00:32Z - INFO - [_save_batch] Processed up to index 69 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:01:20Z - INFO - [_save_batch] Processed up to index 74 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:02:05Z - INFO - [_save_batch] Processed up to index 79 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:02:35Z - INFO - [_save_batch] Processed up to index 84 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:03:27Z - INFO - [_save_batch] Processed up to index 89 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:04:20Z - INFO - [_save_batch] Processed up to index 94 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:05:06Z - INFO - [_save_batch] Processed up to index 99 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:05:47Z - INFO - [_save_batch] Processed up to index 104 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:06:24Z - INFO - [_save_batch] Processed up to index 109 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:07:13Z - INFO - [_save_batch] Processed up to index 114 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:07:51Z - INFO - [_save_batch] Processed up to index 119 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:08:25Z - INFO - [_save_batch] Processed up to index 124 and saved 5 rows to output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv.
+2026-07-09T20:09:04Z - INFO - [TripletGenerator::execute_inference] Finished saving csv to disk at: output/triplets_claude-sonnet-5_semi_cleaned_data_summary.csv

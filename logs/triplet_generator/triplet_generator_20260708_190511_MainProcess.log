@@ -1,0 +1,26 @@
+2026-07-08T17:05:12Z - INFO - [process_data] --- Filtering Applied (2020-01-03 to 2021-01-03 & Semiconductors) ---
+2026-07-08T17:05:12Z - INFO - [process_data] Target Tickers: ['NVDA', 'AMD', 'INTC', 'QCOM', 'MU', 'TSM', 'TXN', 'AMAT', 'ADI', 'MRVL', 'ON']
+2026-07-08T17:05:12Z - INFO - [process_data] Rows Remaining: 3702
+2026-07-08T17:05:12Z - INFO - [process_data] Using column for text content: 'summary'
+2026-07-08T17:05:12Z - INFO - [process_data] 
+--- Semiconductor Data Statistics ---
+2026-07-08T17:05:12Z - INFO - [process_data] TICKER     | MONTHS     | TOTAL ARTICLES
+2026-07-08T17:05:12Z - INFO - [process_data] ----------------------------------------
+2026-07-08T17:05:12Z - INFO - [process_data] INTC       | 13         | 1094
+2026-07-08T17:05:12Z - INFO - [process_data] TSM        | 13         | 240
+2026-07-08T17:05:12Z - INFO - [process_data] AMAT       | 13         | 201
+2026-07-08T17:05:12Z - INFO - [process_data] TXN        | 13         | 175
+2026-07-08T17:05:12Z - INFO - [process_data] ADI        | 13         | 108
+2026-07-08T17:05:12Z - INFO - [process_data] AMD        | 12         | 820
+2026-07-08T17:05:12Z - INFO - [process_data] QCOM       | 12         | 521
+2026-07-08T17:05:12Z - INFO - [process_data] MU         | 12         | 366
+2026-07-08T17:05:12Z - INFO - [process_data] MRVL       | 12         | 108
+2026-07-08T17:05:12Z - INFO - [process_data] ON         | 12         | 69
+2026-07-08T17:05:12Z - INFO - [process_data] --- Final Cleanup ---
+2026-07-08T17:05:12Z - INFO - [process_data] Rows with valid text/title content: 3702
+2026-07-08T17:05:12Z - INFO - [process_data] Loaded and filtered CSV successfully.
+2026-07-08T17:05:12Z - INFO - [TripletGenerator::execute_inference] Finished inference. Saving new csv to disk.
+2026-07-08T17:05:12Z - INFO - [_execute_inference_local] Starting local inference with model: qwen2.5:14b
+2026-07-08T17:05:12Z - INFO - [local_do_inference] Processing 2807 articles with local model qwen2.5:14b.
+2026-07-08T17:05:12Z - INFO - [Timer::__enter__] Entering block 'qwen2.5:14b inference' ...
+2026-07-08T17:05:12Z - INFO - [Timer::__exit__] Block 'qwen2.5:14b inference' took 0.000021000 seconds
