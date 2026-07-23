@@ -2,7 +2,8 @@
 """
 analyze_judge_scores.py
 
-Parses a CSV file where one column contains a text blob like:
+Parses a CSV file where spreadsheet column I (the 9th column) contains a
+text blob like:
 
     Judge LLM Coverage Score: 0.7
     Judge LLM Coverage Score Explanation: ...
@@ -20,13 +21,17 @@ category across all rows.
 
 Usage:
     python analyze_judge_scores.py input.csv
-    python analyze_judge_scores.py input.csv --column I --outdir stats_out
     python analyze_judge_scores.py input.csv --plot
 
-Outputs (written to --outdir, default "judge_score_stats"):
-    - extracted_scores.csv   one row per input row, one column per category
-    - summary_stats.csv      one row per category, one column per statistic
-    - boxplot.png            (only if --plot is passed and matplotlib is available)
+The plot is always generated and saved. By default it is saved only
+(not shown); pass --plot to also display it on screen.
+
+Outputs (always written to <script_dir>/../stats/<input_filename_without_extension>/):
+    - extracted_scores.csv               one row per input row, one column per category
+    - summary_stats.csv                  one row per category, one column per statistic
+    - boxplot.png                        boxplot of the four categories (means only, no outliers)
+    - distribution_<category>.png        one histogram per category (Coverage, Uniqueness,
+                                          Semantic Validity, Consistency)
 """
 
 import argparse
@@ -36,6 +41,15 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+# The Judge LLM text blob always lives in spreadsheet column I (9th column,
+# 0-indexed position 8) — regardless of what that column is actually named
+# in the CSV header (e.g. "LLM judgments evaluation").
+COLUMN_INDEX = 8
+
+# Outputs always go to <script_dir>/../stats, regardless of current working directory.
+SCRIPT_DIR = Path(__file__).resolve().parent
+DEFAULT_OUTDIR = SCRIPT_DIR.parent / "stats"
 
 # Regex patterns to pull each score out of the text blob.
 # \s*:\s* tolerates "Score: 0.7", "Score:0.7", "Score : 0.7", etc.
@@ -91,39 +105,77 @@ def compute_stats(series: pd.Series) -> dict:
     return stats
 
 
-def maybe_plot(scores_df: pd.DataFrame, outdir: Path) -> None:
-    """Save a boxplot + histogram figure of the four categories, if matplotlib is available."""
+def maybe_plot(scores_df: pd.DataFrame, outdir: Path, show: bool = False) -> None:
+    """Save a boxplot figure and one score-distribution histogram per category.
+
+    Files are always saved:
+        - boxplot.png                       boxplot only, all categories
+        - distribution_<category>.png       one histogram per category
+
+    If show is True, each figure is additionally displayed on screen (plt.show()).
+    """
     try:
         import matplotlib
-        matplotlib.use("Agg")
+        if not show:
+            matplotlib.use("Agg")
         import matplotlib.pyplot as plt
     except ImportError:
-        print("matplotlib not available; skipping --plot (pip install matplotlib to enable).")
+        print("matplotlib not available; skipping plot generation (pip install matplotlib to enable).")
         return
 
     categories = list(CATEGORIES.keys())
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 
-    # Boxplot across categories
+    # --- Boxplot (its own figure, no outlier markers, mean shown as orange line) ---
     data = [scores_df[cat].dropna().values for cat in categories]
-    axes[0].boxplot(data, tick_labels=categories, showmeans=True)
-    axes[0].set_title("Judge LLM Scores by Category")
-    axes[0].set_ylabel("Score")
-    axes[0].tick_params(axis="x", rotation=20)
+    fig_box, ax_box = plt.subplots(figsize=(7, 5))
+    bp = ax_box.boxplot(
+        data,
+        tick_labels=categories,
+        showmeans=True,
+        meanline=True,
+        showfliers=False,
+        medianprops={"linewidth": 0},  # hide the median line
+        meanprops={"color": "orange", "linewidth": 2, "linestyle": "-"},
+    )
+    ax_box.legend(bp["means"][:1], ["Mean"], loc="lower right")
+    ax_box.set_title("Judge LLM Scores by Category")
+    ax_box.set_ylabel("Score")
+    ax_box.tick_params(axis="x", rotation=20)
+    fig_box.tight_layout()
 
-    # Overlaid histograms
-    for cat in categories:
-        axes[1].hist(scores_df[cat].dropna(), bins=10, alpha=0.5, label=cat)
-    axes[1].set_title("Score Distributions")
-    axes[1].set_xlabel("Score")
-    axes[1].set_ylabel("Frequency")
-    axes[1].legend(fontsize=8)
+    box_path = outdir / "boxplot.png"
+    fig_box.savefig(box_path, dpi=150)
+    print(f"Boxplot saved to:                  {box_path}")
 
-    fig.tight_layout()
-    plot_path = outdir / "boxplot.png"
-    fig.savefig(plot_path, dpi=150)
-    plt.close(fig)
-    print(f"Plot saved to:                     {plot_path}")
+    if show:
+        plt.show()
+    else:
+        plt.close(fig_box)
+
+    # --- One histogram per category, black-outlined bars ---
+    for i, cat in enumerate(categories):
+        fig_hist, ax_hist = plt.subplots(figsize=(7, 5))
+        ax_hist.hist(
+            scores_df[cat].dropna(),
+            bins=10,
+            color=colors[i % len(colors)],
+            edgecolor="black",
+        )
+        ax_hist.set_title(f"{cat} Score Distribution")
+        ax_hist.set_xlabel("Score")
+        ax_hist.set_ylabel("Frequency")
+        fig_hist.tight_layout()
+
+        safe_name = cat.lower().replace(" ", "_")
+        hist_path = outdir / f"distribution_{safe_name}.png"
+        fig_hist.savefig(hist_path, dpi=150)
+        print(f"{cat} distribution saved to: {hist_path}")
+
+        if show:
+            plt.show()
+        else:
+            plt.close(fig_hist)
 
 
 def main():
@@ -132,22 +184,12 @@ def main():
     )
     parser.add_argument("csv_file", help="Path to the input CSV file")
     parser.add_argument(
-        "--column",
-        default="I",
-        help="Name of the column containing the judge text blob (default: 'I')",
-    )
-    parser.add_argument(
-        "--outdir",
-        default="judge_score_stats",
-        help="Directory to write outputs to (default: judge_score_stats)",
-    )
-    parser.add_argument(
         "--encoding", default="utf-8", help="CSV file encoding (default: utf-8)"
     )
     parser.add_argument(
         "--plot",
         action="store_true",
-        help="Also generate a boxplot + histogram PNG (requires matplotlib)",
+        help="Also display the plot on screen (it is always saved to ../stats/boxplot.png)",
     )
     args = parser.parse_args()
 
@@ -160,17 +202,18 @@ def main():
     except UnicodeDecodeError:
         df = pd.read_csv(csv_path, encoding="latin-1")
 
-    if args.column not in df.columns:
+    if len(df.columns) <= COLUMN_INDEX:
         sys.exit(
-            f"Error: column '{args.column}' not found in CSV.\n"
-            f"Available columns: {list(df.columns)}"
+            f"Error: CSV only has {len(df.columns)} column(s); "
+            f"expected at least {COLUMN_INDEX + 1} (spreadsheet column I)."
         )
+    column_name = df.columns[COLUMN_INDEX]
 
     # Extract the four scores from every row of the target column
-    extracted = df[args.column].apply(extract_scores)
+    extracted = df[column_name].apply(extract_scores)
     scores_df = pd.DataFrame(list(extracted))
 
-    outdir = Path(args.outdir)
+    outdir = DEFAULT_OUTDIR / csv_path.stem
     outdir.mkdir(parents=True, exist_ok=True)
 
     # Per-row extracted scores (useful for spot-checking / further analysis)
@@ -196,8 +239,7 @@ def main():
     print(f"\nPer-row extracted scores saved to: {scores_out_path}")
     print(f"Summary statistics saved to:       {stats_out_path}")
 
-    if args.plot:
-        maybe_plot(scores_df, outdir)
+    maybe_plot(scores_df, outdir, show=args.plot)
 
 
 if __name__ == "__main__":
