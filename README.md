@@ -53,6 +53,11 @@ Folder **Rolling Window** contains the corrected version addressing the data lea
 
 ## Step 0 - Setup
 
+### 0.0 Virtual environment setup (optional)
+
+```bash
+source venv/bin/activate
+```
 
 ### 0.1 Install dependencies:
 ```bash
@@ -71,7 +76,7 @@ ollama pull qwen2.5:14b #downloads the open souce qwen2.5:14b model
 Extracts structured triplets from financial news articles using a locally deployed LLM.
 
 ```bash
-python components/triplet_generator.py \
+python3 components/triplet_generator.py \
     --model-name qwen2.5:14b \ #choose the model you want (qwen2.5:32b...)
     --data-type semi_cleaned_data \ #choose your dataset
     --text-column text \ # triplets generated from text column; use '--text-column summary' to switch to generating from summary column
@@ -79,7 +84,7 @@ python components/triplet_generator.py \
     --end-date 2021-01-02
 
 # try this
-python components/triplet_generator.py --model-name qwen2.5:14b --data-type semi_cleaned_data  --text-column summary --start-date 2020-01-03  --end-date 2021-01-03
+python3 components/triplet_generator.py --model-name qwen2.5:14b --data-type semi_cleaned_data  --text-column summary --start-date 2020-01-03  --end-date 2021-01-03
 ```
 
 
@@ -92,6 +97,8 @@ Runs each triplet through the Judge LLM pipeline, scoring on four dimensions (Co
 
 ```bash
 python components/metrics_computator.py  --triplets-path output/triplets_qwen2.5:14b_semi_cleaned_data_summary.csv
+
+python3 components/metrics_computator.py  --triplets-path output/triplets_gpt-5.5_semi_cleaned_data_summary.csv
 ```
 
 

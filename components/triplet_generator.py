@@ -77,6 +77,10 @@ class TripletGenerator:
             TripletGenerator._execute_inference_local(model_id_, processed_df_, output_path_, text_col_),
         "gemini-2.5-flash": lambda model_id_, processed_df_, output_path_, text_col_:
          TripletGenerator._execute_inference_gemini(model_id_, processed_df_, output_path_, text_col_),
+         "llama3.1:8b": lambda model_id_, processed_df_, output_path_, text_col_:
+         TripletGenerator._execute_inference_local(model_id_, processed_df_, output_path_, text_col_),
+         "mistral:7b": lambda model_id_, processed_df_, output_path_, text_col_:
+         TripletGenerator._execute_inference_local(model_id_, processed_df_, output_path_, text_col_),
         "lite"            : lambda model_id_, processed_df_, output_path_, text_col_:
          TripletGenerator._execute_inference_nova(model_id_, processed_df_, text_col_),
         "micro"           : lambda model_id_, processed_df_, output_path_, text_col_:

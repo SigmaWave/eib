@@ -2,8 +2,10 @@
 """
 analyze_judge_scores.py
 
-Parses a CSV file where spreadsheet column I (the 9th column) contains a
-text blob like:
+Parses a CSV file that has a column headed "LLM judgments evaluation"
+(wherever that column happens to be — column I in some exports, column W in
+others; it's located automatically by header name) containing a text blob
+like:
 
     Judge LLM Coverage Score: 0.7
     Judge LLM Coverage Score Explanation: ...
@@ -42,10 +44,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-# The Judge LLM text blob always lives in spreadsheet column I (9th column,
-# 0-indexed position 8) — regardless of what that column is actually named
-# in the CSV header (e.g. "LLM judgments evaluation").
-COLUMN_INDEX = 8
+# The Judge LLM text blob always lives in the column with this exact header
+# name, regardless of which spreadsheet column position it happens to be in
+# (e.g. "I" in one export, "W" in another).
+COLUMN_HEADER = "LLM judgments evaluation"
 
 # Outputs always go to <script_dir>/../stats, regardless of current working directory.
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -59,6 +61,21 @@ CATEGORIES = {
     "Semantic Validity": r"Judge\s+LLM\s+Semantic\s+Validity\s+Score\s*:\s*([-+]?\d*\.?\d+)",
     "Consistency": r"Judge\s+LLM\s+Consistency\s+Score\s*:\s*([-+]?\d*\.?\d+)",
 }
+
+
+def find_judge_column(df: pd.DataFrame, header: str = COLUMN_HEADER) -> str:
+    """Find the column whose header matches `header`, tolerant of case and
+    surrounding whitespace. Returns the actual column name as it appears in
+    the DataFrame. Raises ValueError if no match is found.
+    """
+    target = header.strip().lower()
+    for col in df.columns:
+        if str(col).strip().lower() == target:
+            return col
+    raise ValueError(
+        f"Could not find a column named '{header}' in the CSV.\n"
+        f"Available columns: {list(df.columns)}"
+    )
 
 
 def extract_scores(text, patterns=CATEGORIES):
@@ -202,12 +219,11 @@ def main():
     except UnicodeDecodeError:
         df = pd.read_csv(csv_path, encoding="latin-1")
 
-    if len(df.columns) <= COLUMN_INDEX:
-        sys.exit(
-            f"Error: CSV only has {len(df.columns)} column(s); "
-            f"expected at least {COLUMN_INDEX + 1} (spreadsheet column I)."
-        )
-    column_name = df.columns[COLUMN_INDEX]
+    try:
+        column_name = find_judge_column(df)
+    except ValueError as e:
+        sys.exit(f"Error: {e}")
+    print(f"Using column: '{column_name}'")
 
     # Extract the four scores from every row of the target column
     extracted = df[column_name].apply(extract_scores)
@@ -215,10 +231,6 @@ def main():
 
     outdir = DEFAULT_OUTDIR / csv_path.stem
     outdir.mkdir(parents=True, exist_ok=True)
-
-    # Per-row extracted scores (useful for spot-checking / further analysis)
-    scores_out_path = outdir / "extracted_scores.csv"
-    scores_df.to_csv(scores_out_path, index=False)
 
     # Summary stats per category
     all_stats = {cat: compute_stats(scores_df[cat]) for cat in CATEGORIES}
