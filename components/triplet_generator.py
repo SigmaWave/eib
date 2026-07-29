@@ -16,6 +16,7 @@ import json
 import os
 import pandas as pd
 import re
+import requests
 
 # from components.gemini_client import get_gemini_client  
 from utils.logger import Logger
@@ -44,6 +45,8 @@ class TripletGenerator:
                                     "martain7r/finance-llama-8b:fp16": "martain7r/finance-llama-8b:fp16",
                                     "deepseek-r1:14b": "deepseek-r1:14b",
                                     "gemini-2.5-flash": "gemini-2.5-flash",
+                                    "llama3.1:8b" : "llama3.1:8b",
+                                    "mistral:7b" : "mistral:7b",
                                     "lite"            : LITE_MODEL_ID,
                                     "micro"           : MICRO_MODEL_ID,
                                     "pro"             : PRO_MODEL_ID,
@@ -431,10 +434,10 @@ def parse_args():
     parser.add_argument(
         "--model-name",
         type=str,
-        choices=['qwen2', 'qwen2.5:14b', 'qwen2.5:30b', 'qwen2.5:latest', 'qwen3:4b', "qwen3:14b", 'qwen3:latest', 'gemini-2.5-flash', 'lite', 'micro', 'pro', 'premier', 'claude-sonnet-5'],
+        choices=['qwen2', 'qwen2.5:14b', 'qwen2.5:30b', 'qwen2.5:latest', 'qwen3:4b', "qwen3:14b", 'qwen3:latest', 'gemini-2.5-flash','llama3.1:8b', 'mistral:7b', 'lite', 'micro', 'pro', 'premier', 'claude-sonnet-5'],
         default="qwen2.5:32b",
         help="Choose which model to run. Default is 'gemini-2.5-flash' from"
-             " ['qwen2', 'qwen2.5:latest', 'qwen3:4b', 'qwen3:14b', 'qwen3:latest', 'llama3.1:8b', 'mistral:7b','gemini-2.5-flash', 'lite', 'micro', 'pro', 'premier']."
+             " ['qwen2', 'qwen2.5:latest', 'qwen3:4b', 'qwen3:14b', 'qwen3:latest', 'llama3.1:8b', 'mistral:7b', 'gemini-2.5-flash', 'lite', 'micro', 'pro', 'premier']."
     )
     parser.add_argument(
         '--data-type',
