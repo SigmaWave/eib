@@ -16,7 +16,6 @@ import json
 import os
 import pandas as pd
 import re
-import requestsjob
 
 # from components.gemini_client import get_gemini_client  
 from utils.logger import Logger
@@ -471,3 +470,4 @@ if __name__ == "__main__":
     args = parse_args()
     Logger.setup_file("logs/triplet_generator")
     TripletGenerator(args.model_name, args.data_type, args.text_column, args.start_date, args.end_date)
+``
