@@ -435,7 +435,7 @@ def parse_args():
         choices=['qwen2', 'qwen2.5:14b', 'qwen2.5:30b', 'qwen2.5:latest', 'qwen3:4b', "qwen3:14b", 'qwen3:latest', 'gemini-2.5-flash', 'lite', 'micro', 'pro', 'premier', 'claude-sonnet-5'],
         default="qwen2.5:32b",
         help="Choose which model to run. Default is 'gemini-2.5-flash' from"
-             " ['qwen2', 'qwen2.5:latest', 'qwen3:4b', 'qwen3:14b', 'qwen3:latest', 'gemini-2.5-flash', 'lite', 'micro', 'pro', 'premier']."
+             " ['qwen2', 'qwen2.5:latest', 'qwen3:4b', 'qwen3:14b', 'qwen3:latest', 'llama3.1:8b', 'mistral:7b','gemini-2.5-flash', 'lite', 'micro', 'pro', 'premier']."
     )
     parser.add_argument(
         '--data-type',
