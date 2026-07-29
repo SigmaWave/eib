@@ -470,4 +470,3 @@ if __name__ == "__main__":
     args = parse_args()
     Logger.setup_file("logs/triplet_generator")
     TripletGenerator(args.model_name, args.data_type, args.text_column, args.start_date, args.end_date)
-``
