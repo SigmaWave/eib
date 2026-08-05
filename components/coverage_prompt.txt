@@ -22,6 +22,7 @@ You are provided with:
 1. Assess **coverage quality**:
   - Do the triplets capture the article’s most important, financially actionable content?
   - Are key directional relationships or financial events present?
+  - Before scoring, treat triplets that express the same fact or relation (even if reworded) as a single instance. Repetition of the same relation must not increase the coverage score. Score coverage based on the number of DISTINCT financially relevant facts captured, not the number of triplets.
   - Assign **LLM_Coverage_Score** from 0.0 (poor) to 1.0 (excellent)
 
 ---

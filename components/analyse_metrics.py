@@ -248,7 +248,6 @@ def main():
         if n_missing:
             print(f"\nNote: {n_missing} row(s) had no parseable '{cat}' score.")
 
-    print(f"\nPer-row extracted scores saved to: {scores_out_path}")
     print(f"Summary statistics saved to:       {stats_out_path}")
 
     maybe_plot(scores_df, outdir, show=args.plot)
